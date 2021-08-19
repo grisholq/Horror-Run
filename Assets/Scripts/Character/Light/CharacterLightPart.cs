@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class CharacterLightPart : MonoBehaviour
 {
-    [SerializeField] private float _maxRange;
-    [SerializeField] private float _minRange;
+    [SerializeField] private float[] _ranges;
 
     private Light _light;
 
@@ -14,11 +13,19 @@ public class CharacterLightPart : MonoBehaviour
 
     private void Start()
     {
-        _light.range = _maxRange;
+        _light.range = GetRangeFromNormalizedSanity(1);
     }
 
-    public void SetRangeNormalized(float range)
+    public void SetRangeBySanity(float sanity)
     {
-        _light.range = (_maxRange - _minRange) * range + _minRange;
+        _light.range = GetRangeFromNormalizedSanity(sanity);
+    }
+
+    private float GetRangeFromNormalizedSanity(float sanity)
+    {
+        if (sanity > 0.8f) return _ranges[3];
+        else if (sanity > 0.5f) return _ranges[2];
+        else if (sanity > 0.25f) return _ranges[1];
+        return _ranges[0];
     }
 }

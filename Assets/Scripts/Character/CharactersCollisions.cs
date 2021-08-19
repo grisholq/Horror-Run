@@ -13,7 +13,6 @@ public class CharactersCollisions : MonoBehaviour
         {
             NearedMonster?.Invoke();
             EnemyNearbyStateChanged?.Invoke(true);
-            Debug.Log("Enter");
         }
     }
 
@@ -22,10 +21,7 @@ public class CharactersCollisions : MonoBehaviour
         Monster monster;
         if (other.TryGetComponent<Monster>(out monster))
         {
-            Debug.Log("Exit");
             EnemyNearbyStateChanged?.Invoke(false);
         }
     }
-
-
 }

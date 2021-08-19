@@ -9,11 +9,11 @@ public class CharacterLight : MonoBehaviour
         _lightParts = GetComponentsInChildren<CharacterLightPart>();
     }
 
-    public void SetRangeNormalized(float range)
+    public void SetRangeBySanity(float sanity)
     {
         foreach (var lightSoucre in _lightParts)
         {
-            lightSoucre.SetRangeNormalized(range);
+            lightSoucre.SetRangeBySanity(sanity);
         }
     }
 }

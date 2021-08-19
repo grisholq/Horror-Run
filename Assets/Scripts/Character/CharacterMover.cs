@@ -4,11 +4,15 @@ public class CharacterMover : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed;
     [SerializeField] private bool _lookInMovementDirection;
+    [SerializeField] private bool _isStopped;
+   
+    public bool IsStopped { get => _isStopped; set => _isStopped = value; }
 
     private Vector3 _movement;
-
+   
     private void Update()
     {
+        if (IsStopped) return;
         ResetMovement();
         CalculateMovement();
         Move();
