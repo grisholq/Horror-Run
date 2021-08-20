@@ -8,8 +8,14 @@ public class CharacterMover : MonoBehaviour
    
     public bool IsStopped { get => _isStopped; set => _isStopped = value; }
 
+    private Rigidbody _rigidbody;
     private Vector3 _movement;
-   
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
     private void Update()
     {
         if (IsStopped) return;
@@ -56,7 +62,8 @@ public class CharacterMover : MonoBehaviour
     private void Move()
     {
         if (_lookInMovementDirection) LookInMovementDirection();
-        transform.position += _movement.normalized * _movementSpeed * Time.deltaTime;     
+        Vector3 delta = _movement.normalized * _movementSpeed * Time.deltaTime;
+        _rigidbody.MovePosition(transform.position + delta);  
     }
 
     private void LookInMovementDirection()

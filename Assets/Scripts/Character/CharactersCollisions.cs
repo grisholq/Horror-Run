@@ -1,27 +1,66 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class CharactersCollisions : MonoBehaviour
 {
-    [SerializeField] private UnityEvent NearedMonster;
-    [SerializeField] private UnityEvent<bool> EnemyNearbyStateChanged;
+    [SerializeField] private float _checkTime;
 
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private UnityEvent NearedMonster;
+    [SerializeField] private UnityEvent PassedMonster;
+
+    private Coroutine _checkCoroutine;
+
+    private bool _hasMonster;
+
+    private void OnEnable()
     {
-        Monster monster;
-        if(other.TryGetComponent<Monster>(out monster))
+        _checkCoroutine = StartCoroutine(CheckCollidersProcess());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(_checkCoroutine);
+    }
+
+    private IEnumerator CheckCollidersProcess()
+    {
+        while(true)
         {
-            NearedMonster?.Invoke();
-            EnemyNearbyStateChanged?.Invoke(true);
+            yield return new WaitForSeconds(_checkTime);
+           
+            bool hasMonster = HasMonstersAround();
+
+            if(_hasMonster != hasMonster)
+            {
+                if(hasMonster)
+                {
+                    NearedMonster?.Invoke();
+                }
+                else
+                {
+                    PassedMonster?.Invoke();
+                }
+
+                _hasMonster = hasMonster;
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private bool HasMonstersAround()
     {
-        Monster monster;
-        if (other.TryGetComponent<Monster>(out monster))
+        Collider[] colliders = GetCollidersNearby();
+
+        foreach (var collider in colliders)
         {
-            EnemyNearbyStateChanged?.Invoke(false);
+            if (collider.GetComponent<Monster>() != null) return true;
         }
+
+        return false;
+    }
+
+    private Collider[] GetCollidersNearby()
+    {
+        return Physics.OverlapBox(transform.position, Vector3.one * 3);
     }
 }

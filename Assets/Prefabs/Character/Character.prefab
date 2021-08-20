@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000009536743, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &90626390
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -104,12 +104,12 @@ RectTransform:
   m_Children:
   - {fileID: 90626388}
   m_Father: {fileID: 934253689}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 0}
-  m_SizeDelta: {x: -0.0000076294, y: 0}
+  m_AnchorMin: {x: 0, y: 0.24200001}
+  m_AnchorMax: {x: 1, y: 0.758}
+  m_AnchoredPosition: {x: 0.0013895035, y: 0.0028766394}
+  m_SizeDelta: {x: 0.0014228523, y: -0.11292608}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &934253688
 GameObject:
@@ -140,7 +140,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1968538351}
   - {fileID: 130768627}
   m_Father: {fileID: 2077399731}
   m_RootOrder: 0
@@ -240,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 1429964430}
   m_LocalRotation: {x: 0.15988116, y: 0, z: 0, w: 0.98713636}
   m_LocalPosition: {x: 0, y: 1.158, z: 0.092}
-  m_LocalScale: {x: 1, y: 1.0823758, z: 0.88467395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2628761343314420731}
   m_RootOrder: 0
@@ -319,83 +318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7be983f6c5122545a7164eae46a0cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRange: 12
-  _minRange: 0
---- !u!1 &1968538350
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1968538351}
-  - component: {fileID: 1968538353}
-  - component: {fileID: 1968538352}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1968538351
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968538350}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 934253689}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1968538353
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968538350}
-  m_CullTransparentMesh: 1
---- !u!114 &1968538352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968538350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  _ranges:
+  - 3
+  - 5.5
+  - 9
+  - 12
 --- !u!1 &2077399730
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +463,7 @@ Transform:
   m_GameObject: {fileID: 2122736796}
   m_LocalRotation: {x: 0.60876137, y: -0, z: -0, w: 0.7933534}
   m_LocalPosition: {x: 0, y: 1.554, z: -0.02}
-  m_LocalScale: {x: 1, y: 0.6097071, z: 1.5464103}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2628761343314420731}
   m_RootOrder: 1
@@ -615,8 +542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7be983f6c5122545a7164eae46a0cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRange: 5.5
-  _minRange: 0
+  _ranges:
+  - 1.5
+  - 3
+  - 4.5
+  - 5.5
 --- !u!1 &3293821933145192910
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7357298423088368392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7357298423088581490}
@@ -2499,6 +2429,7 @@ GameObject:
   - component: {fileID: 2104036097339316904}
   - component: {fileID: 3537587194281231533}
   - component: {fileID: 7877718365616400801}
+  - component: {fileID: 1894783530}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -2553,11 +2484,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!65 &2104036097339316907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2585,6 +2516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 2.5
   _lookInMovementDirection: 1
+  _isStopped: 0
 --- !u!114 &2104036097339316904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,13 +2532,25 @@ MonoBehaviour:
   _maxSanity: 100
   HaveGoneMad:
     m_PersistentCalls:
-      m_Calls: []
-  SanityChangedNormalized:
+      m_Calls:
+      - m_Target: {fileID: 1894783530}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  SanityLevelChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 934253691}
-        m_TargetAssemblyTypeName: Bar, Assembly-CSharp
-        m_MethodName: SetBarValue
+      - m_Target: {fileID: 3630416923511064167}
+        m_TargetAssemblyTypeName: CharacterLight, Assembly-CSharp
+        m_MethodName: SetRangeBySanity
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2616,9 +2560,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3630416923511064167}
-        m_TargetAssemblyTypeName: CharacterLight, Assembly-CSharp
-        m_MethodName: SetRangeNormalized
+      - m_Target: {fileID: 934253691}
+        m_TargetAssemblyTypeName: Bar, Assembly-CSharp
+        m_MethodName: SetBarValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2654,10 +2598,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 7357298423078967496}
   _sanityParameter: Sanity
-  _monsterNearbyParameter: 
-  _nearedMonsterParameter: 
-  _deathParameter: 
-  _danceParameter: 
+  _nearedMonsterParameter: NearedMonster
+  _passedMonsterParameter: PassedMonster
+  _deathParameter: Died
+  _danceParameter: Won
 --- !u!114 &7877718365616400801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,6 +2614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bbf115ed817154fba139bf3d666dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _checkTime: 0.4
   NearedMonster:
     m_PersistentCalls:
       m_Calls:
@@ -2685,13 +2630,64 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  EnemyNearbyStateChanged:
+  PassedMonster:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3537587194281231533}
         m_TargetAssemblyTypeName: CharacterAnimator, Assembly-CSharp
-        m_MethodName: SetMonsterNearby
-        m_Mode: 0
+        m_MethodName: SetPassedMonster
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1894783530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357298423088435734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0526220a33add649bd68f0b4eaded00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Died:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Level, Assembly-CSharp
+        m_MethodName: LoseWithDelay
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2104036097339316903}
+        m_TargetAssemblyTypeName: CharacterMover, Assembly-CSharp
+        m_MethodName: set_IsStopped
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3537587194281231533}
+        m_TargetAssemblyTypeName: CharacterAnimator, Assembly-CSharp
+        m_MethodName: SetDeath
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

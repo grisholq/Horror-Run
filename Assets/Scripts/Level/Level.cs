@@ -27,7 +27,6 @@ public class Level : MonoBehaviour
     public void Win()
     {
         LevelWon?.Invoke();
-        Debug.Log("Win");
     }
 
     public void WinWithDelay(float seconds)
@@ -38,7 +37,6 @@ public class Level : MonoBehaviour
     public void Lose()
     {
         LevelLost?.Invoke();
-        Debug.Log("Lose");
     }
 
     public void LoseWithDelay(float seconds)
