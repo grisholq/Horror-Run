@@ -5,6 +5,11 @@ public class LevelTimeManager : MonoBehaviour
     [SerializeField] private float _defaultTimeScale;
     [SerializeField] private float _defaultFixedDeltaTime;
 
+    private void Awake()
+    {
+        ResumeTime();
+    }
+
     public void StopTime()
     {
         Time.timeScale = 0;

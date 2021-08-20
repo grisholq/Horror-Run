@@ -26,10 +26,7 @@ public class CharacterMover : MonoBehaviour
 
     private void CalculateMovement()
     {
-        if (IsMovingSideway())
-        {
-            AddSidewayMovement();
-        }           
+        AddSidewayMovement();
         AddForwardMovement();
     }
 
@@ -38,20 +35,40 @@ public class CharacterMover : MonoBehaviour
         _movement = Vector3.zero;
     }
 
-    private bool IsMovingSideway()
+    private bool HasTouchInput()
+    {
+        return Input.touchCount != 0;
+    }
+    
+    private bool HasKeyboardInput()
     {
         return Input.GetAxis("Horizontal") != 0;
     }
-
+    
     private void AddSidewayMovement()
     {
-        _movement += GetSideMovementDirection();
+        if(HasTouchInput()) _movement += GetSideMovementDirectionFromTouch();
+        if(HasKeyboardInput()) _movement += GetSideMovementDirection();
+    }
+
+    private Vector3 GetSideMovementDirectionFromTouch()
+    {
+        Vector2 touchPosition = Input.GetTouch(0).position;
+        Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+        float x;
+
+        x = (touchPosition.x / screenSize.x) * 2;
+
+        if (x <= 1) return new Vector3(- (1 - x), 0, 0);
+        if (x > 1) return new Vector3(x - 1, 0, 0);
+
+        return Vector3.zero;
     }
 
     private Vector3 GetSideMovementDirection()
     {
-        float horizontalAxis = Input.GetAxis("Horizontal");
-        return Vector3.right * horizontalAxis;
+        float axis = Input.GetAxis("Horizontal");
+        return Vector3.right * axis;
     }
 
     private void AddForwardMovement()
