@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class SkinChanger : MonoBehaviour
 {
-    [SerializeField] private Transform _prefab;
+    [SerializeField] private CharacterSkinChanger _changer;
+    [SerializeField] private CharacterSkin _skin;
 
-    private void Awake()
+    private void Start()
     {
-        _prefab.gameObject.AddComponent<BoxCollider>();
+        _changer.SetSkin(_skin);
     }
 }

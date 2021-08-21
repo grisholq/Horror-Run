@@ -11,9 +11,9 @@ public class CharacterSkinChanger : MonoBehaviour
 
     public void SetSkin(CharacterSkin skin)
     {
-        SetSkinAvatar(skin.Avatar);
-        InstantiateSkinPrefab(skin.Prefab);
         RemovePreviousSkin();
+        InstantiateSkinPrefab(skin.Prefab); 
+        SetSkinAvatar(skin.Avatar);
     }
 
     private void InstantiateSkinPrefab(Transform prefab)
@@ -24,10 +24,9 @@ public class CharacterSkinChanger : MonoBehaviour
 
     private void RemovePreviousSkin()
     {
-        Transform[] children = GetComponentsInChildren<Transform>();
-        foreach (var child in children)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            Destroy(child.gameObject);
+            Destroy(transform.GetChild(i).gameObject);
         }
     }
 
