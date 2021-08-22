@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
 
     public CharacterMover Mover => GetComponent<CharacterMover>();
     public CharacterSanity Sanity => GetComponent<CharacterSanity>();
-    public CharacterAnimator Animator => GetComponent<CharacterAnimator>();
+    public CharacterAnimator Animator => GetComponentInChildren<CharacterAnimator>();
 
     public void Die()
     {

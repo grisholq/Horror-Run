@@ -4,9 +4,13 @@ using UnityEngine.Events;
 public class SkinChooserUI : MonoBehaviour
 {
     [SerializeField] private SkinButton _skinButton;
-    [SerializeField] private UnityEvent<CharacterSkin> SkinChoosen;
 
-    public void ShowAllSkins(CharacterSkin[] skins)
+    private void Awake()
+    {
+        ShowAllSkins(SkinsStorage.Instance.Skins);
+    }
+
+    private void ShowAllSkins(CharacterSkin[] skins)
     {
         if (skins == null || skins.Length == 0) return;
 
@@ -30,6 +34,6 @@ public class SkinChooserUI : MonoBehaviour
 
     private void ChooseSkin(CharacterSkin skin)
     {
-        SkinChoosen?.Invoke(skin);
+        SkinsStorage.Instance.SetCurrentSkin(skin);
     }
 }
