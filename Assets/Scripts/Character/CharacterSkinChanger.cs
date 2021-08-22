@@ -7,12 +7,19 @@ public class CharacterSkinChanger : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        SkinsStorage.Instance.SkinChanged += SetSkin;
     }
 
-    public void SetSkin(CharacterSkin skin)
+    private void OnDestroy()
+    {
+        SkinsStorage.Instance.SkinChanged -= SetSkin;
+    }
+
+    private void SetSkin(CharacterSkin skin)
     {
         RemovePreviousSkin();
         InstantiateSkinPrefab(skin.Prefab); 
+        SetSkinAvatar(null);
         SetSkinAvatar(skin.Avatar);
     }
 
@@ -24,6 +31,8 @@ public class CharacterSkinChanger : MonoBehaviour
 
     private void RemovePreviousSkin()
     {
+        if (transform.childCount == 0) return;
+
         for (int i = 0; i < transform.childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
