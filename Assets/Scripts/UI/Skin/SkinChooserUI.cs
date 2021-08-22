@@ -6,17 +6,8 @@ public class SkinChooserUI : MonoBehaviour
     [SerializeField] private SkinButton _skinButton;
     [SerializeField] private UnityEvent<CharacterSkin> SkinChoosen;
 
-    private void Start()
+    public void ShowAllSkins(CharacterSkin[] skins)
     {
-        ShowAllSkins();
-    }
-
-    private void ShowAllSkins()
-    {
-        CharacterSkin[] skins = GetSkinsFromResources();
-
-        Debug.Log(skins.Length);
-
         if (skins == null || skins.Length == 0) return;
 
         foreach (var skin in skins)
