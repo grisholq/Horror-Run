@@ -91,7 +91,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8466322534475663115}
   - component: {fileID: 8466322534475663108}
+  - component: {fileID: 2975900860115882463}
   - component: {fileID: 6791751003132269213}
+  - component: {fileID: 699395651844574351}
   m_Layer: 0
   m_Name: SanityDecreaser
   m_TagString: Untagged
@@ -127,6 +129,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &2975900860115882463
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466322534475663114}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190335
+  m_Size: 0.4
 --- !u!114 &6791751003132269213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +156,16 @@ MonoBehaviour:
   changerType: 1
   _sanityChange: 10
   _destoryOnEnter: 1
+--- !u!114 &699395651844574351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466322534475663114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902695d5d0c3a9442ac1dbbc01df2eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _halo: {fileID: 2975900860115882463}

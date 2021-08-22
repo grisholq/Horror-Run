@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2234678253291482192}
   - component: {fileID: 2234678253291482195}
+  - component: {fileID: 7846458142362919741}
   - component: {fileID: 7485845992172822029}
+  - component: {fileID: 5286448265454176111}
   m_Layer: 0
   m_Name: SanityIncreaser
   m_TagString: Untagged
@@ -46,6 +48,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!122 &7846458142362919741
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234678253291482193}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294958592
+  m_Size: 0.4
 --- !u!114 &7485845992172822029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +75,19 @@ MonoBehaviour:
   changerType: 0
   _sanityChange: 10
   _destoryOnEnter: 1
+--- !u!114 &5286448265454176111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234678253291482193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902695d5d0c3a9442ac1dbbc01df2eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _halo: {fileID: 7846458142362919741}
 --- !u!1001 &8556362886324646904
 PrefabInstance:
   m_ObjectHideFlags: 0
