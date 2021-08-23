@@ -169,3 +169,4 @@ Received Import Request.
 Start importing Assets/Prefabs/UI/UI.prefab using Guid(e228656df61872d46bce0e77977036fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c2b1eff4ba2b67a8d64f02d4f6ae923') in 0.106644 seconds 
   Import took 0.111860 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
