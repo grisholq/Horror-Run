@@ -9,6 +9,8 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] private string _passedMonsterParameter;
     [SerializeField] private string _deathParameter;
     [SerializeField] private string _danceParameter;
+    [SerializeField] private string _walkParameter;
+    [SerializeField] private string _projectorParameter;
 
     public void SetSanity(float sanity)
     {
@@ -33,5 +35,15 @@ public class CharacterAnimator : MonoBehaviour
     public void SetDance()
     {
         _animator.SetTrigger(_danceParameter);
+    }
+
+    public void SetWalk()
+    {
+        _animator.SetTrigger(_walkParameter);
+    }
+
+    public void SetProjector()
+    {
+        _animator.SetTrigger(_projectorParameter);
     }
 }

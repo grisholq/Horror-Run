@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class CharacterCameraPositioner : MonoBehaviour
 {
-    [SerializeField] private Camera _followingCamera;
+    [SerializeField] private Transform _followingCamera;
     [SerializeField] private float _backDistance;
     [SerializeField] private float _upDistance;
+
+    
+
+    private void Awake()
+    {
+        
+    }
 
     private void Update()
     {
         PositionCamera();
-        _followingCamera.transform.LookAt(transform.position + new Vector3(0, 1.5f, 0));
     }
 
     private void PositionCamera()
