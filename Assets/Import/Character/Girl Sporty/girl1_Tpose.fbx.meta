@@ -4,20 +4,17 @@ ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 2073693694548410006
-    second: Armature.001|Armature.001|mixamo.com|Layer0
+      74: -7448726743065450900
+    second: Armature|Armature.001|Armature|Armature|mixamo.com|Layer0|Armature|A
   - first:
-      74: 495427370130382429
-    second: Armature.001|Armature.001|mixamo.com|Layer0.001
+      74: -6333809740904400131
+    second: Armature|Armature.001|Armature|Armature|mixamo.com|Layer0|Armature|Armat
   - first:
-      74: -6734315199927337518
-    second: Armature.001|Armature|mixamo.com|Layer0
+      74: -6842666708266138392
+    second: Armature|Armature.001|mixamo.com|Layer0
   - first:
-      74: 5228067795773068300
-    second: Armature.001|Armature|mixamo.com|Layer0.001
-  - first:
-      74: 6925220218922271411
-    second: Armature.001|Armature|mixamo.com|Layer0.002
+      74: -4791504522942941401
+    second: Armature|Armature|mixamo.com|Layer0
   externalObjects: {}
   materials:
     materialImportMode: 2

@@ -38,8 +38,15 @@ public class BossSkullThrower : MonoBehaviour
         BossProjectile skull = GetSkull().GetComponent<BossProjectile>();
         skull.Target = _character;
         skull.IsChasing = true;
-        skull.transform.position = _startingPosition.position;
+        skull.transform.position = GetThrowPositionStart();
         SkullThrowed?.Invoke();
+    }
+
+    private Vector3 GetThrowPositionStart()
+    {
+        Vector3 start = _startingPosition.position;
+        start.x += Random.Range(-3, 3);
+        return start;
     }
 
     private Transform GetSkull()

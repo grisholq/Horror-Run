@@ -40,7 +40,9 @@ public class BossProjectile : MonoBehaviour
 
     private Vector3 GetNextPosition()
     {
-        return Vector3.MoveTowards(transform.position, Target.position, Time.deltaTime * _speed);
+        Vector3 newPosition = Vector3.MoveTowards(transform.position, Target.position, Time.deltaTime * _speed);
+        newPosition.y = transform.position.y;
+        return newPosition;
     }
 
     private void LookAtTarget()

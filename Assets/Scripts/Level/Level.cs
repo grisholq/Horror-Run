@@ -5,9 +5,11 @@ using System.Collections;
 
 public class Level : MonoBehaviour
 {
+    [SerializeField] private float _winDelayTime;
+    [SerializeField] private float _loseDelayTime;
+
     [SerializeField] private UnityEvent LevelWon;
     [SerializeField] private UnityEvent LevelLost;
-
 
     private void Awake()
     {     
@@ -29,9 +31,9 @@ public class Level : MonoBehaviour
         LevelWon?.Invoke();
     }
 
-    public void WinWithDelay(float seconds)
+    public void WinWithDelay()
     {
-        StartCoroutine(DelayOperation(Win, seconds));
+        StartCoroutine(DelayOperation(Win, _winDelayTime));
     }
 
     public void Lose()
@@ -39,9 +41,9 @@ public class Level : MonoBehaviour
         LevelLost?.Invoke();
     }
 
-    public void LoseWithDelay(float seconds)
+    public void LoseWithDelay()
     {
-        StartCoroutine(DelayOperation(Lose, seconds));
+        StartCoroutine(DelayOperation(Lose, _loseDelayTime));
     }
     
     public void NextLevel()
