@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CharacterSideInput))]
 public class CharacterMover : MonoBehaviour
 {
+    [SerializeField] private UnityEvent CharacterMoved;
     [SerializeField] private Transform _view;
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _sideSpeed;
@@ -28,6 +30,7 @@ public class CharacterMover : MonoBehaviour
         delta += GetSideDelta();
         LookInDirection(delta);
         _rigidbody.MovePosition(transform.position + delta);
+        CharacterMoved?.Invoke();
     }
 
     private Vector3 GetForwardDelta()

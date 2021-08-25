@@ -6,19 +6,12 @@ public class CharacterCameraPositioner : MonoBehaviour
     [SerializeField] private float _backDistance;
     [SerializeField] private float _upDistance;
 
-    
-
     private void Awake()
     {
         
     }
 
-    private void Update()
-    {
-        PositionCamera();
-    }
-
-    private void PositionCamera()
+    public void PositionCamera()
     {
         _followingCamera.transform.position = GetCameraPosition();
     }

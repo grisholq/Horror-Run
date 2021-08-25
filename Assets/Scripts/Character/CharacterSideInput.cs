@@ -7,7 +7,14 @@ public class CharacterSideInput : MonoBehaviour
     private void Update()
     {
         if (HasKeyboardInput()) NormalizedValue = GetSideMovement();
-        if (HasTouchInput()) NormalizedValue = GetSideMovementDirectionFromTouch();
+        if (HasTouchInput())
+        {
+            float newInput = GetSideMovementDirectionFromTouch();
+            if (Mathf.Abs(newInput - NormalizedValue) >= 0.06f)
+            {
+                NormalizedValue = newInput;
+            }
+        }
     }
 
     private bool HasTouchInput()

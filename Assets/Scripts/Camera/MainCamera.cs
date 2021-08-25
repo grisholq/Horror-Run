@@ -21,8 +21,9 @@ public class MainCamera : MonoBehaviour
         LookAtCharacter();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
+        if (_lookTarget == null) return;
         transform.LookAt(_lookTarget.position + _lookOffset);
     }
 
