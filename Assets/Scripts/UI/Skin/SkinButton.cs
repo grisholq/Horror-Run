@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SkinButton : MonoBehaviour
 {
-    private RawImage _skinImage;
+    [SerializeField] private RawImage _skinImage;
 
     private CharacterSkin _skin;
 
