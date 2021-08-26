@@ -4,10 +4,12 @@ using UnityEngine.Events;
 public class CharacterSanity : MonoBehaviour
 {
     [SerializeField] private float _maxSanity;
+    [SerializeField] private float _decreasePerSecond;
 
     [SerializeField] private UnityEvent HaveGoneMad;
     [SerializeField] private UnityEvent<float> SanityLevelChanged;
 
+    public bool IsConstantlyDecreasing { get; set; }
     public bool IsMad { get; set; }
 
     private float _sanity;
@@ -15,7 +17,16 @@ public class CharacterSanity : MonoBehaviour
     private void Awake()
     {
         IsMad = false;
+        IsConstantlyDecreasing = true;
         _sanity = _maxSanity;
+    }
+
+    private void Update()
+    {   
+        if(IsConstantlyDecreasing)
+        {
+            LoseSanity(_decreasePerSecond * Time.deltaTime);
+        }  
     }
 
     public void LoseSanity(float sanity)

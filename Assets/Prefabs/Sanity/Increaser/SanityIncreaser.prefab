@@ -58,8 +58,8 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294958592
-  m_Size: 0.4
+    rgba: 4278206722
+  m_Size: 0.45
 --- !u!114 &7485845992172822029
 MonoBehaviour:
   m_ObjectHideFlags: 0

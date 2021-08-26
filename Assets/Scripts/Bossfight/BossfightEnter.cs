@@ -25,6 +25,7 @@ public class BossfightEnter : MonoBehaviour
     private void PrepareCharacter(Character character)
     {
         character.Mover.IsStopped = true;
+        character.Mover.Stop();
         character.Animator.SetWalk();
     }
 }

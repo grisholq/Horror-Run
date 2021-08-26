@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class MonsterMover : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private Vector3 _direction;
+    [SerializeField] private float _speed;
 
     private void Update()
     {
-        transform.position += Vector3.back * speed * Time.deltaTime;
+        transform.position += _direction * _speed * Time.deltaTime;
     }
 }

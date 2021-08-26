@@ -22,6 +22,8 @@ public class LevelEnd : MonoBehaviour
     private void SetCharacter(Character character)
     {
         character.Mover.IsStopped = true;
+        character.Mover.Stop();
         character.Animator.SetDance();
+        character.Sanity.IsConstantlyDecreasing = false;    
     }
 }

@@ -95,6 +95,94 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1253497401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253497402}
+  - component: {fileID: 1253497404}
+  - component: {fileID: 1253497403}
+  - component: {fileID: 1253497405}
+  m_Layer: 0
+  m_Name: BodyCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253497402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253497401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 151568148794392484}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1253497404
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253497401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.7939386, z: 0.31043243}
+  m_Center: {x: 0, y: 1.3796675, z: 0.040224712}
+--- !u!114 &1253497403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253497401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03ec6c3c848dee42884da64fc749f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollidedPlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1617275848563636255}
+        m_TargetAssemblyTypeName: Monster, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1253497405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253497401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f3f62d0cf24e04e928305f8004347a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changerType: 1
+  _sanityChange: 20
+  _destoryOnEnter: 0
 --- !u!1 &1377839901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1202,7 @@ GameObject:
   - component: {fileID: 1617275848563636255}
   - component: {fileID: 2001747245}
   - component: {fileID: 3688240097558148517}
+  - component: {fileID: 873202468816961793}
   m_Layer: 0
   m_Name: Slender
   m_TagString: Untagged
@@ -1134,6 +1223,7 @@ Transform:
   m_Children:
   - {fileID: 3209332505408980066}
   - {fileID: 4736676138426909651}
+  - {fileID: 1253497402}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1167,7 +1257,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 1.86
   m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &1617275848563636255
 MonoBehaviour:
@@ -1181,6 +1271,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae1fb2899212794d82b12a01406feb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Died:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 873202468816961793}
+        m_TargetAssemblyTypeName: MonsterDeathEffects, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2001747245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,7 +1298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78752af89c49094592961df6f77a515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  _direction: {x: 0, y: 0, z: 0}
+  _speed: 2
 --- !u!114 &3688240097558148517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,6 +1315,20 @@ MonoBehaviour:
   changerType: 1
   _maxDistance: 6
   _maxSanityChange: 50
+--- !u!114 &873202468816961793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765330025024441783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789bea286bb97f54cb106684571532a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particlesCount: 100
+  _particles: {fileID: 4404881051256108097, guid: 24dbe0dc6c88b7245ad7a063298839aa, type: 3}
 --- !u!1 &3880959326482564319
 GameObject:
   m_ObjectHideFlags: 0
