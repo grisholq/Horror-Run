@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterViewField : MonoBehaviour
+public class CharacterItemsViewField : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

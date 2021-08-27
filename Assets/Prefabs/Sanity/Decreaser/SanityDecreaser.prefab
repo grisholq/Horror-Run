@@ -176,6 +176,7 @@ MonoBehaviour:
   changerType: 1
   _sanityChange: 10
   _destoryOnEnter: 1
+  _destroyParticles: {fileID: 330370110006902661, guid: f638a0279bad30e4dae92c7469132eaf, type: 3}
 --- !u!114 &699395651844574351
 MonoBehaviour:
   m_ObjectHideFlags: 0

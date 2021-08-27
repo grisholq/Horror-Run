@@ -5,10 +5,9 @@ using UnityEngine.Events;
 public class CharacterMover : MonoBehaviour
 {
     [SerializeField] private UnityEvent CharacterMoved;
-    [SerializeField] private Transform _view;
+    [SerializeField] private Transform[] _rotatablesByMovement;
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _sideSpeed;
-    [SerializeField] private float _speedClamp;
     [SerializeField] private bool _isStopped;
 
     public bool IsStopped { get => _isStopped; set => _isStopped = value; }
@@ -31,7 +30,6 @@ public class CharacterMover : MonoBehaviour
         delta += GetForwardDelta();
         delta += GetSideDelta();
         LookInDirection(delta);
-        //_rigidbody.MovePosition(transform.position + delta);
         _rigidbody.velocity = delta;
         CharacterMoved?.Invoke();
     }
@@ -53,6 +51,11 @@ public class CharacterMover : MonoBehaviour
 
     private void LookInDirection(Vector3 direction)
     {
-        _view.LookAt(transform.position + direction);
+        Vector3 lookPosition = transform.position + direction;
+
+        foreach (var rotatable in _rotatablesByMovement)
+        {
+            rotatable.LookAt(transform.position + direction);
+        }
     }
 }
