@@ -82,7 +82,7 @@ MonoBehaviour:
   TurnedToBoss:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7127712085926862089}
+      - m_Target: {fileID: 1798654986}
         m_TargetAssemblyTypeName: Boss, Assembly-CSharp
         m_MethodName: DieWithDelay
         m_Mode: 1
@@ -360,72 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6299648841287218891}
   _speed: 2
---- !u!114 &7127712085926862088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7224060131080774627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff33e47aaf9c50343b7e0c012f84fdb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _particlesCount: 200
-  _particles: {fileID: 4404881051256108097, guid: 24dbe0dc6c88b7245ad7a063298839aa, type: 3}
---- !u!114 &7127712085926862089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7224060131080774627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b905e128faa696e4d89a7986a1b92a7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deathDelay: 2.5
-  Died:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Level, Assembly-CSharp
-        m_MethodName: WinWithDelay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharacterAnimator, Assembly-CSharp
-        m_MethodName: SetDance
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7127712085926862088}
-        m_TargetAssemblyTypeName: BossDeathEffects, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &7127712085101303479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -575,10 +509,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7127712086762831911}
     m_Modifications:
-    - target: {fileID: 2133637290, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
-      propertyPath: _character
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 480684539752559328, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -629,11 +559,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
---- !u!1 &7224060131080774627 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 480684539752559328, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
-  m_PrefabInstance: {fileID: 7127712086311342339}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8001441637120211289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 999918578877163610, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
@@ -644,7 +569,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2133637289, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
   m_PrefabInstance: {fileID: 7127712086311342339}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7224060131080774627}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f26e26eb1365c934b9acc99a7d6957b4, type: 3}
@@ -655,9 +580,20 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2133637290, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
   m_PrefabInstance: {fileID: 7127712086311342339}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7224060131080774627}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffce4dd14d90a54418ed3249e7197ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1798654986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7127712085926862089, guid: 27719ebe906a4664e87564f5d8bc4be2, type: 3}
+  m_PrefabInstance: {fileID: 7127712086311342339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b905e128faa696e4d89a7986a1b92a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
