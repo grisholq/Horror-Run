@@ -6,16 +6,11 @@ public class SkinButton : MonoBehaviour
 {
     [SerializeField] private RawImage _skinImage;
 
-    private CharacterSkin _skin;
+    private CharacterSkinData _skin;
 
-    public event Action<CharacterSkin> SkinChoosen;
+    public event Action<CharacterSkinData> SkinChoosen;
 
-    private void Awake()
-    {
-        _skinImage = GetComponent<RawImage>();
-    }
-
-    public void SetSkin(CharacterSkin skin)
+    public void SetSkin(CharacterSkinData skin)
     {
         _skin = skin;
         _skinImage.texture = skin.Image;     

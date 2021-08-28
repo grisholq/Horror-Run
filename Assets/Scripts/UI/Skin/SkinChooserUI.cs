@@ -1,16 +1,18 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class SkinChooserUI : MonoBehaviour
 {
     [SerializeField] private SkinButton _skinButton;
 
+    private CharacterSkin _characterSkin;
+
     private void OnEnable()
     {
+        _characterSkin = FindObjectOfType<CharacterSkin>();
         ShowAllSkins(SkinsStorage.Instance.Skins);
     }
 
-    private void ShowAllSkins(CharacterSkin[] skins)
+    private void ShowAllSkins(CharacterSkinData[] skins)
     {
         if (skins == null || skins.Length == 0) return;
 
@@ -22,18 +24,14 @@ public class SkinChooserUI : MonoBehaviour
         }
     }
 
-    private CharacterSkin[] GetSkinsFromResources()
-    {
-        return Resources.FindObjectsOfTypeAll<CharacterSkin>();
-    }
-
     private SkinButton InstantiateSkinButton()
     {
         return Instantiate(_skinButton, transform);
     }
 
-    private void ChooseSkin(CharacterSkin skin)
+    private void ChooseSkin(CharacterSkinData skin)
     {
-        SkinsStorage.Instance.SetCurrentSkin(skin);
+        GameDataStorage.Instance.CharacterSkinName = skin.name;
+        _characterSkin.SetSkin(skin);
     }
 }

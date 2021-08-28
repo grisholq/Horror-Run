@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainCamera : MonoBehaviour
+public class CameraFollower : MonoBehaviour
 {
     [SerializeField] private Transform _character;
     [SerializeField] private Vector3 _characterLookOffset;
@@ -17,7 +17,6 @@ public class MainCamera : MonoBehaviour
     private void Awake()
     {
         _camera = GetComponent<Camera>();
-
         LookAtCharacter();
     }
 

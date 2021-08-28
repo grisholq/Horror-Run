@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    private MainCamera _camera;
+    private CameraFollower _camera;
 
     private void Awake()
     {
-        _camera = FindObjectOfType<MainCamera>();
+        _camera = FindObjectOfType<CameraFollower>();
     }
 
     private void LateUpdate()

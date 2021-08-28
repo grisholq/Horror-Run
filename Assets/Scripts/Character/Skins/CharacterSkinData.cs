@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterSkin", menuName = "MyAssets/CharacterSkin")]
-public class CharacterSkin : ScriptableObject
+public class CharacterSkinData : ScriptableObject
 {
     public string Name;
     public Transform Prefab;

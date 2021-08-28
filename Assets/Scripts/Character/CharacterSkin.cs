@@ -1,27 +1,43 @@
 using UnityEngine;
 
-public class CharacterSkinChanger : MonoBehaviour
+public class CharacterSkin : MonoBehaviour
 {
     private Animator _animator;
 
+    private CharacterSkinData _current;
+
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
-        SkinsStorage.Instance.SkinChanged += SetSkin;
+        InizializeComponents();
+        InizializeSkin();
     }
 
-    private void SetSkin(CharacterSkin skin)
+    private void InizializeComponents()
     {
+        _animator = GetComponent<Animator>();
+    }
+
+    private void InizializeSkin()
+    {
+        string skinName = GameDataStorage.Instance.CharacterSkinName;
+        SetSkin(SkinsStorage.Instance.GetSkinByName(skinName));
+    }
+
+    public void SetSkin(CharacterSkinData skin)
+    {
+        if (skin == _current) return;
+        _current = skin;
+
         RemovePreviousSkin();
-        InstantiateSkinPrefab(skin.Prefab); 
-        SetSkinAvatar(null);
-        SetSkinAvatar(skin.Avatar);
+        InstantiateSkinPrefab(skin.Prefab);
+        SetSkinAvatar(skin.Avatar);     
     }
 
     private void InstantiateSkinPrefab(Transform prefab)
     {
         Transform skin = Instantiate(prefab);
         skin.SetParent(transform);
+        skin.localPosition = Vector3.zero;
     }
 
     private void RemovePreviousSkin()
