@@ -251,3 +251,4 @@ MonoBehaviour:
   changerType: 1
   _sanityChange: 15
   _destoryOnEnter: 1
+  _destroyParticles: {fileID: 4704023730944365093, guid: 4d0b9edebdb5b7141a2c903ded31273c, type: 3}

@@ -38,6 +38,7 @@ public class CharacterSkin : MonoBehaviour
         Transform skin = Instantiate(prefab);
         skin.SetParent(transform);
         skin.localPosition = Vector3.zero;
+        skin.localEulerAngles = Vector3.zero;
     }
 
     private void RemovePreviousSkin()

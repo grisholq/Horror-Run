@@ -1,40 +1,20 @@
 using UnityEngine;
 
-public class CameraFollower : MonoBehaviour
+public class CameraFollower : Singleton<CameraFollower>, ICameraFollower
 {
-    [SerializeField] private Transform _character;
-    [SerializeField] private Vector3 _characterLookOffset;
-
-    [SerializeField] private Transform _boss;
-    [SerializeField] private Vector3 _bossLookOffset;
-
-    private Camera _camera;
-    public Camera Camera => _camera;
-
-    private Transform _lookTarget;
-    private Vector3 _lookOffset;
-
-    private void Awake()
-    {
-        _camera = GetComponent<Camera>();
-        LookAtCharacter();
-    }
+    [SerializeField] private float _followSpeed;
+    public ICameraFollowed Followed { get; set; }
 
     private void LateUpdate()
     {
-        if (_lookTarget == null) return;
-        transform.LookAt(_lookTarget.position + _lookOffset);
+        if (Followed == null) return;
+
+        transform.position = GetNextPosition();
+        transform.LookAt(Followed.Transform.position + Followed.LookOffset);
     }
 
-    public void LookAtCharacter()
+    private Vector3 GetNextPosition()
     {
-        _lookTarget = _character;
-        _lookOffset = _characterLookOffset;
-    }
-
-    public void LookAtBoss()
-    {
-        _lookTarget = _boss;
-        _lookOffset = _bossLookOffset;
+        return Vector3.MoveTowards(transform.position, Followed.Position, Time.deltaTime * _followSpeed);
     }
 }

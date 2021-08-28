@@ -6,7 +6,7 @@ public class SkinChooserUI : MonoBehaviour
 
     private CharacterSkin _characterSkin;
 
-    private void OnEnable()
+    private void Awake()
     {
         _characterSkin = FindObjectOfType<CharacterSkin>();
         ShowAllSkins(SkinsStorage.Instance.Skins);
