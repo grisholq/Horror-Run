@@ -244,9 +244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skins:
-  - {fileID: 11400000, guid: 3f5d2a70b3b47cd4291d2313f1bf4c8a, type: 2}
-  - {fileID: 11400000, guid: 295805c9d8956854f9f81327834d41d9, type: 2}
-  - {fileID: 11400000, guid: db86b7901d3e4784ab79dd25955ee395, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1978679234
 Transform:
   m_ObjectHideFlags: 0

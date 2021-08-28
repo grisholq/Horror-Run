@@ -5,7 +5,7 @@ public class SkinChooserUI : MonoBehaviour
 {
     [SerializeField] private SkinButton _skinButton;
 
-    private void Awake()
+    private void OnEnable()
     {
         ShowAllSkins(SkinsStorage.Instance.Skins);
     }

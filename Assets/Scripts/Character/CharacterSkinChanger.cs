@@ -10,11 +10,6 @@ public class CharacterSkinChanger : MonoBehaviour
         SkinsStorage.Instance.SkinChanged += SetSkin;
     }
 
-    private void OnDestroy()
-    {
-        SkinsStorage.Instance.SkinChanged -= SetSkin;
-    }
-
     private void SetSkin(CharacterSkin skin)
     {
         RemovePreviousSkin();

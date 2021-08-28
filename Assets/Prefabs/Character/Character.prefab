@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSanity: 100
-  _decreasePerSecond: 5
+  _maxDecreasePerSecond: 10
   HaveGoneMad:
     m_PersistentCalls:
       m_Calls:
@@ -1268,7 +1268,6 @@ MonoBehaviour:
   - {fileID: 2628761343314420731}
   _forwardSpeed: 3.6
   _sideSpeed: 12
-  _speedClamp: 0
   _isStopped: 0
 --- !u!114 &1644043264
 MonoBehaviour:

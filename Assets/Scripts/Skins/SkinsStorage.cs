@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class SkinsStorage : Singleton<SkinsStorage>
 {
-    [SerializeField] private CharacterSkin[] _skins;
-
+    private CharacterSkin[] _skins;
     public CharacterSkin[] Skins => _skins;
     public CharacterSkin Current { get; private set; }
 
@@ -20,7 +19,8 @@ public class SkinsStorage : Singleton<SkinsStorage>
     private void Inizialize()
     {
         DontDestroyOnLoad(this);
-        Current = FindSkinByName(LoadSkinName());
+        //Current = FindSkinByName(LoadSkinName());
+        _skins = Resources.FindObjectsOfTypeAll<CharacterSkin>();
     }
 
     private CharacterSkin FindSkinByName(string name)

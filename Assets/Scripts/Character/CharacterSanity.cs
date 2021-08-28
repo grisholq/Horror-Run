@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class CharacterSanity : MonoBehaviour
 {
     [SerializeField] private float _maxSanity;
-    [SerializeField] private float _decreasePerSecond;
+    [SerializeField] private float _maxDecreasePerSecond;
 
     [SerializeField] private UnityEvent HaveGoneMad;
     [SerializeField] private UnityEvent<float> SanityLevelChanged;
@@ -25,7 +25,8 @@ public class CharacterSanity : MonoBehaviour
     {   
         if(IsConstantlyDecreasing)
         {
-            LoseSanity(_decreasePerSecond * Time.deltaTime);
+            float lostSanity = (_sanity / _maxSanity) * _maxDecreasePerSecond;
+            LoseSanity(lostSanity * Time.deltaTime);
         }  
     }
 

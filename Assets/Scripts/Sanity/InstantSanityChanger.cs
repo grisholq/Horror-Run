@@ -15,16 +15,17 @@ public class InstantSanityChanger : SanityChanger
             ChangeSanity(sanity, _sanityChange);
             if (_destoryOnEnter)
             {
+                SpawnDeathParticles();
                 Destroy(gameObject);           
             }          
         }
     }
 
-    private void SpawnParticles()
+    private void SpawnDeathParticles()
     {
         ParticleSystem particles = Instantiate(_destroyParticles);
         particles.transform.position = transform.position;
         particles.Play();
-        Destroy(particles, 1f);
+        Destroy(particles.gameObject, 1f);
     }
 }
