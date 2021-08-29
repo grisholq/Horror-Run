@@ -4,7 +4,9 @@ using UnityEngine.Events;
 public class CharacterSanity : MonoBehaviour
 {
     [SerializeField] private float _maxSanity;
+    [SerializeField] private float _startingSanity;
     [SerializeField] private float _maxDecreasePerSecond;
+    [SerializeField] private float _minSanityAutoDecrease;
 
     [SerializeField] private UnityEvent HaveGoneMad;
     [SerializeField] private UnityEvent<float> SanityLevelChanged;
@@ -18,12 +20,16 @@ public class CharacterSanity : MonoBehaviour
     {
         IsMad = false;
         IsConstantlyDecreasing = true;
-        _sanity = _maxSanity;
+    }
+
+    private void Start()
+    {
+        SetSanity(_startingSanity);
     }
 
     private void Update()
     {   
-        if(IsConstantlyDecreasing)
+        if(IsConstantlyDecreasing && _sanity >= _minSanityAutoDecrease)
         {
             float lostSanity = (_sanity / _maxSanity) * _maxDecreasePerSecond;
             LoseSanity(lostSanity * Time.deltaTime);
@@ -47,7 +53,15 @@ public class CharacterSanity : MonoBehaviour
     {
         if (IsMad) return;
 
-        _sanity = Mathf.Min(_sanity + sanity, _maxSanity);
+        _sanity = Mathf.Min(_sanity + sanity, _maxSanity);      
+        SanityLevelChanged?.Invoke(GetNormalizedSanity());
+    }
+
+    public void SetSanity(float sanity)
+    {
+        if (IsMad) return;
+
+        _sanity = Mathf.Clamp(sanity, 0, _maxSanity);
         SanityLevelChanged?.Invoke(GetNormalizedSanity());
     }
 

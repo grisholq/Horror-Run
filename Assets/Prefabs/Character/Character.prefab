@@ -822,7 +822,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 17
+  m_Radius: 12
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2069539581102668867
 MonoBehaviour:
@@ -1169,7 +1169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSanity: 100
+  _startingSanity: 75
   _maxDecreasePerSecond: 10
+  _minSanityAutoDecrease: 25
   HaveGoneMad:
     m_PersistentCalls:
       m_Calls:

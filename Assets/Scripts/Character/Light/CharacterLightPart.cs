@@ -23,7 +23,7 @@ public class CharacterLightPart : MonoBehaviour
 
     private float GetRangeFromNormalizedSanity(float sanity)
     {
-        if (sanity > 0.8f) return _ranges[3];
+        if (sanity > 0.75f) return _ranges[3];
         else if (sanity > 0.5f) return _ranges[2];
         else if (sanity > 0.25f) return _ranges[1];
         return _ranges[0];

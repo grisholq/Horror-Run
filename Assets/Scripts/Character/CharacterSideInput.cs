@@ -13,7 +13,7 @@ public class CharacterSideInput : MonoBehaviour
 
     private bool HasTouchInput()
     {
-        return Input.touchCount != 0;
+        return Input.touchCount != 0 && Time.timeScale > 0;
     }
 
     private bool HasKeyboardInput()

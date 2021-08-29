@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1419589505365679240}
   - component: {fileID: 5123908627011037076}
   m_Layer: 5
-  m_Name: SkinButton
+  m_Name: CharacterSkinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

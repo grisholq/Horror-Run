@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class SkinChooserUI : MonoBehaviour
+public class CharacterSkinChooserUI : MonoBehaviour
 {
-    [SerializeField] private SkinButton _skinButton;
+    [SerializeField] private CharacterSkinButton _skinButton;
 
     private CharacterSkin _characterSkin;
 
     private void Awake()
     {
         _characterSkin = FindObjectOfType<CharacterSkin>();
-        ShowAllSkins(SkinsStorage.Instance.Skins);
+        ShowAllSkins(SkinsStorage.Instance.CharacterSkins);
     }
 
     private void ShowAllSkins(CharacterSkinData[] skins)
@@ -18,13 +18,13 @@ public class SkinChooserUI : MonoBehaviour
 
         foreach (var skin in skins)
         {
-            SkinButton button = InstantiateSkinButton();
+            CharacterSkinButton button = InstantiateSkinButton();
             button.SetSkin(skin);
             button.SkinChoosen += ChooseSkin;
         }
     }
 
-    private SkinButton InstantiateSkinButton()
+    private CharacterSkinButton InstantiateSkinButton()
     {
         return Instantiate(_skinButton, transform);
     }

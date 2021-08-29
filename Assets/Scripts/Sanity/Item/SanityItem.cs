@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SanityItem : MonoBehaviour
 {
-    [SerializeField] Behaviour _halo;
+    [SerializeField] private Behaviour _halo;
+    [SerializeField] private SanityItemSkin _skin;
+
+    public SanityItemSkin Skin => _skin;
 
     private void Awake()
     {

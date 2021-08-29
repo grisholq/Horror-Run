@@ -4,32 +4,32 @@ ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 6889310004754566897
-    second: Armature|Armature.001|Armature|Armature.001|mixamo.com|Layer0.001|Armatu
+      74: -744300677643448363
+    second: Armature|Armature|Armature|Armature.001|Armature|Armature.001|mixamo
   - first:
-      74: -7402838299441869607
-    second: Armature|Armature.001|Armature|Armature.001|mixamo.com|Layer0|Armature|A
+      74: -365567244181013536
+    second: Armature|Armature|Armature|Armature.001|Armature|Armature.001|mixamo.com
   - first:
-      74: -3439979901648765405
-    second: Armature|Armature.001|Armature|Armature|mixamo.com|Layer0.001|Armature|A
+      74: 285769440249588302
+    second: Armature|Armature|Armature|Armature.001|Armature|Armature|mixamo.com
   - first:
-      74: -8135971273364089989
-    second: Armature|Armature.001|Armature|Armature|mixamo.com|Layer0.002|Armature|A
+      74: 8435617431228499522
+    second: Armature|Armature|Armature|Armature.001|Armature|Armature|mixamo.com.001
   - first:
-      74: -7448726743065450900
-    second: Armature|Armature.001|Armature|Armature|mixamo.com|Layer0|Armature|A
+      74: -6225295488674234785
+    second: Armature|Armature|Armature|Armature.001|Armature|Armature|mixamo.com.002
   - first:
-      74: -5138525086080442856
-    second: Armature|Armature.001|Armature|Armature|mixamo.com|Layer0|Armature|A.001
+      74: -2656837936567472731
+    second: Armature|Armature|Armature|Armature.001|Armature|Armature|mixamo.com.003
   - first:
-      74: -6333809740904400131
-    second: Armature|Armature.001|Armature|Armature|mixamo.com|Layer0|Armature|Armat
+      74: -8338588900541279154
+    second: Armature|Armature|Armature|Armature.001|Armature|Armature|mixamo.com|Lay
   - first:
-      74: -6842666708266138392
-    second: Armature|Armature.001|mixamo.com|Layer0
+      74: -9175832459547444433
+    second: Armature|Armature|Armature|Armature.001|mixamo.com|Layer0|Armature|Armat
   - first:
-      74: -4791504522942941401
-    second: Armature|Armature|mixamo.com|Layer0
+      74: -6201834280730877740
+    second: Armature|Armature|Armature|Armature|mixamo.com|Layer0|Armature|Armature|
   externalObjects: {}
   materials:
     materialImportMode: 2

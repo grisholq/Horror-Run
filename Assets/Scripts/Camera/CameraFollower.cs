@@ -15,6 +15,6 @@ public class CameraFollower : Singleton<CameraFollower>, ICameraFollower
 
     private Vector3 GetNextPosition()
     {
-        return Vector3.MoveTowards(transform.position, Followed.Position, Time.deltaTime * _followSpeed);
+        return Vector3.MoveTowards(transform.position, Followed.Position, Time.unscaledDeltaTime * _followSpeed);
     }
 }

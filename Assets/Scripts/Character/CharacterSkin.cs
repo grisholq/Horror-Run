@@ -20,7 +20,7 @@ public class CharacterSkin : MonoBehaviour
     private void InizializeSkin()
     {
         string skinName = GameDataStorage.Instance.CharacterSkinName;
-        SetSkin(SkinsStorage.Instance.GetSkinByName(skinName));
+        SetSkin(SkinsStorage.Instance.GetCharacterSkinByName(skinName));
     }
 
     public void SetSkin(CharacterSkinData skin)
@@ -30,6 +30,7 @@ public class CharacterSkin : MonoBehaviour
 
         RemovePreviousSkin();
         InstantiateSkinPrefab(skin.Prefab);
+        SetSkinAvatar(null);     
         SetSkinAvatar(skin.Avatar);     
     }
 
@@ -47,7 +48,7 @@ public class CharacterSkin : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            Destroy(transform.GetChild(i).gameObject);
+            DestroyImmediate(transform.GetChild(i).gameObject);
         }
     }
 
