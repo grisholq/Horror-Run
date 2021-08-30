@@ -1090,6 +1090,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c556f996c55ca854ab7a262191bf26c6, type: 3}
+--- !u!114 &247112863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7287652029044161242, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
+  m_PrefabInstance: {fileID: 8874719380940261552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095c16caf289cb247bfdaba1c5113b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &248512096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9739,10 +9750,30 @@ PrefabInstance:
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2128955477}
+    - target: {fileID: 2584522566881437562, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
+      propertyPath: CharacterMoved.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4939185033096187294, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: d3099f28cf4022b498c2e8514441090d, type: 3}
+    - target: {fileID: 6064249359797136877, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
+      propertyPath: NearedMonster.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 247112863}
+    - target: {fileID: 6064249359797136877, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
+      propertyPath: PassedMonster.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 247112863}
+    - target: {fileID: 6064249359797136877, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
+      propertyPath: NearedMonster.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNearedMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064249359797136877, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
+      propertyPath: PassedMonster.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetPassedMonster
+      objectReference: {fileID: 0}
     - target: {fileID: 7357298423088435734, guid: 4b3a44f61b97db0418c43c7f56677260, type: 3}
       propertyPath: m_Name
       value: Character

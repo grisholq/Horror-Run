@@ -15,7 +15,6 @@ public class Bar : MonoBehaviour
 
     public void SetBarValueNormalized(float value)
     {
-        _slider.normalizedValue = value;
         ValueChanged?.Invoke(value);
     }
 }

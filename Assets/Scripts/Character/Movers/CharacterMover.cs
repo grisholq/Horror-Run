@@ -4,7 +4,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(CharacterSideInput))]
 public class CharacterMover : MonoBehaviour
 {
-    [SerializeField] private UnityEvent CharacterMoved;
     [SerializeField] private Transform[] _rotatablesByMovement;
     [SerializeField] private float _forwardSpeed;
     [SerializeField] private float _sideSpeed;
@@ -31,7 +30,6 @@ public class CharacterMover : MonoBehaviour
         delta += GetSideDelta();
         LookInDirection(delta);
         _rigidbody.velocity = delta;
-        CharacterMoved?.Invoke();
     }
 
     public void Stop()
