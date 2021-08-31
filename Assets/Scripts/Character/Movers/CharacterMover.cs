@@ -10,10 +10,9 @@ public class CharacterMover : MonoBehaviour
     [SerializeField] private bool _isStopped;
 
     public bool IsStopped { get => _isStopped; set => _isStopped = value; }
-    public float SideSpeed { get => _sideSpeed; set => _sideSpeed = value; }
 
-    private Rigidbody _rigidbody;
     private CharacterSideInput _sideInput;
+    private Rigidbody _rigidbody;
 
     private void Awake()
     {
@@ -25,16 +24,14 @@ public class CharacterMover : MonoBehaviour
     {
         if (IsStopped) return;
 
-        Vector3 delta = Vector3.zero;
-        delta += GetForwardDelta();
-        delta += GetSideDelta();
+        Vector3 delta = FormDelta();
         LookInDirection(delta);
-        _rigidbody.velocity = delta;
+        SetMovementDirection(delta);
     }
 
-    public void Stop()
+    private Vector3 FormDelta()
     {
-        _rigidbody.velocity = Vector3.zero;
+        return GetForwardDelta() + GetSideDelta();
     }
 
     private Vector3 GetForwardDelta()
@@ -44,7 +41,12 @@ public class CharacterMover : MonoBehaviour
 
     private Vector3 GetSideDelta()
     {
-        return transform.right * _sideInput.NormalizedValue * _sideSpeed;    
+        return transform.right * _sideInput.SideInput * _sideSpeed;    
+    }
+
+    private void SetMovementDirection(Vector3 direction)
+    {
+        _rigidbody.velocity = direction;
     }
 
     private void LookInDirection(Vector3 direction)
@@ -55,5 +57,16 @@ public class CharacterMover : MonoBehaviour
         {
             rotatable.LookAt(transform.position + direction);
         }
+    }
+
+    public void StopMovement()
+    {
+        IsStopped = true;
+        _rigidbody.velocity = Vector3.zero;
+    }
+
+    public void ResumeMovement()
+    {
+        IsStopped = false;
     }
 }

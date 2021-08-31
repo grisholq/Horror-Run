@@ -1183,7 +1183,7 @@ MonoBehaviour:
   _maxSanity: 100
   _startingSanity: 40
   _maxDecreasePerSecond: 9
-  _minSanityAutoDecrease: 25
+  _autoDecreaseThereshold: 25
   HaveGoneMad:
     m_PersistentCalls:
       m_Calls:

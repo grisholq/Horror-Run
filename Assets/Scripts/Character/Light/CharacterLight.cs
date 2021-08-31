@@ -11,9 +11,9 @@ public class CharacterLight : MonoBehaviour
 
     public void SetRangeBySanity(float sanity)
     {
-        foreach (var lightSoucre in _lightParts)
+        foreach (var lightPart in _lightParts)
         {
-            lightSoucre.SetRangeBySanity(sanity);
+            lightPart.SetRangeBySanity(sanity);
         }
     }
 }

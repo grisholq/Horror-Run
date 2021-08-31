@@ -6,7 +6,7 @@ public class CharacterSanity : MonoBehaviour
     [SerializeField] private float _maxSanity;
     [SerializeField] private float _startingSanity;
     [SerializeField] private float _maxDecreasePerSecond;
-    [SerializeField] private float _minSanityAutoDecrease;
+    [SerializeField] private float _autoDecreaseThereshold;
 
     [SerializeField] private UnityEvent HaveGoneMad;
     [SerializeField] private UnityEvent<float> SanityLevelChanged;
@@ -16,22 +16,29 @@ public class CharacterSanity : MonoBehaviour
 
     private float _sanity;
 
-    private void Awake()
+    public float Sanity 
     {
-        IsMad = false;
-        IsConstantlyDecreasing = true;
+        get => _sanity;
+
+        private set
+        {
+            _sanity = Mathf.Clamp(value, 0, _maxSanity);
+            SanityLevelChanged?.Invoke(GetNormalizedSanity());
+        }
     }
 
     private void Start()
     {
+        IsMad = false;
+        IsConstantlyDecreasing = true;
         SetSanity(_startingSanity);
     }
 
     private void Update()
     {   
-        if(IsConstantlyDecreasing && _sanity >= _minSanityAutoDecrease)
+        if(IsConstantlyDecreasing && Sanity >= _autoDecreaseThereshold)
         {
-            float lostSanity = (_sanity / _maxSanity) * _maxDecreasePerSecond;
+            float lostSanity = (Sanity / _maxSanity) * _maxDecreasePerSecond;
             LoseSanity(lostSanity * Time.deltaTime);
         }  
     }
@@ -40,10 +47,9 @@ public class CharacterSanity : MonoBehaviour
     {
         if (IsMad) return;
 
-        _sanity = Mathf.Max(_sanity - sanity, 0);
-        SanityLevelChanged?.Invoke(GetNormalizedSanity());
+        Sanity -= sanity;
 
-        if (_sanity <= 0)
+        if (Sanity <= 0)
         {
             GetMad();
         }
@@ -52,22 +58,18 @@ public class CharacterSanity : MonoBehaviour
     public void ReturnSanity(float sanity)
     {
         if (IsMad) return;
-
-        _sanity = Mathf.Min(_sanity + sanity, _maxSanity);      
-        SanityLevelChanged?.Invoke(GetNormalizedSanity());
+        Sanity += sanity;      
     }
 
     public void SetSanity(float sanity)
     {
         if (IsMad) return;
-
-        _sanity = Mathf.Clamp(sanity, 0, _maxSanity);
-        SanityLevelChanged?.Invoke(GetNormalizedSanity());
+        Sanity = sanity;
     }
 
     private float GetNormalizedSanity()
     {
-        return _sanity / _maxSanity;
+        return Sanity / _maxSanity;
     }
 
     private void GetMad()

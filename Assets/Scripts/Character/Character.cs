@@ -5,9 +5,25 @@ public class Character : MonoBehaviour
 {
     [SerializeField] private UnityEvent Died;
 
-    public CharacterMover Mover => GetComponent<CharacterMover>();
-    public CharacterSanity Sanity => GetComponent<CharacterSanity>();
-    public CharacterAnimator Animator => GetComponentInChildren<CharacterAnimator>();
+    private CharacterMover _mover;
+    private CharacterSanity _sanity;
+    private CharacterAnimator _animator;
+
+    public CharacterMover Mover => _mover;
+    public CharacterSanity Sanity => _sanity;
+    public CharacterAnimator Animator => _animator;
+
+    private void Awake()
+    {
+        InizializeComponents();   
+    }
+
+    private void InizializeComponents()
+    {
+        _mover = GetComponent<CharacterMover>();
+        _sanity = GetComponent<CharacterSanity>();
+        _animator = GetComponentInChildren<CharacterAnimator>();
+    }
 
     public void Die()
     {
