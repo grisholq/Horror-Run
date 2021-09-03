@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class SanitySkinButtonStates : MonoBehaviour
+public class SanitySkinButtonState : MonoBehaviour
 {
     [SerializeField] private RawImage _skinImage;
     [SerializeField] private TextMeshProUGUI _skinName;
@@ -56,6 +56,7 @@ public class SanitySkinButtonStates : MonoBehaviour
     private void ShowOpenedState(SanityItemSkinData skin)
     {
         _skinImage.texture = skin.Image;
+        _skinName.text = skin.Name;
         _skinImage.color = _normalColor;
         _button.interactable = true;
     }

@@ -21,6 +21,16 @@ public class SanitySkinsShopUI : MonoBehaviour
         }
     }
 
+    private void RedrawButtons()
+    {
+        SanitySkinButton[] buttons = GetComponentsInChildren<SanitySkinButton>();
+
+        foreach (var button in buttons)
+        {
+            button.Redraw();
+        }
+    }
+
     private SanitySkinButton InstantiateSkinButton()
     {
         return Instantiate(_skinButton, transform);
@@ -29,5 +39,6 @@ public class SanitySkinsShopUI : MonoBehaviour
     private void ChooseSkin(SanityItemSkinData skin)
     {
         SanitySkins.Instance.ChooseSkin(skin);
+        RedrawButtons();
     }
 }

@@ -11,6 +11,11 @@ public class SanitySkinChanger : MonoBehaviour
         LoadSkins();
     }
 
+    private void OnDisable()
+    {
+        SanitySkins.Instance.SkinChanged -= SetSanitySkins;
+    }
+
     private void InizializeSkins()
     {
         InizializePositiveSkins();
