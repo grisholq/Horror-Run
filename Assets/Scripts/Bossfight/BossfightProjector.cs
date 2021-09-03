@@ -8,7 +8,6 @@ public class BossfightProjector : MonoBehaviour
     [SerializeField] private UnityEvent TurnedToBoss;
     [SerializeField] private bool _enabled;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (IsCharacter(other))

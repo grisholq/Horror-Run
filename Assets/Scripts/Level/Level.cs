@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
 
     [SerializeField] private UnityEvent LevelWon;
     [SerializeField] private UnityEvent LevelLost;
+    [SerializeField] private UnityEvent LevelEnd;
 
     private void Awake()
     {     
@@ -28,6 +29,7 @@ public class Level : MonoBehaviour
 
     public void Win()
     {
+        LevelEnd?.Invoke();
         LevelWon?.Invoke();
     }
 
@@ -38,6 +40,7 @@ public class Level : MonoBehaviour
 
     public void Lose()
     {
+        LevelEnd?.Invoke();
         LevelLost?.Invoke();
     }
 

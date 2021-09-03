@@ -7,4 +7,5 @@ public class SanityItemSkinData : ScriptableObject
     public Transform PositiveView;
     public Transform NegativeView;
     public Texture Image;
+    public SkinChangingData ChangingData;
 }

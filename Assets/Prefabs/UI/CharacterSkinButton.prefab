@@ -84,7 +84,9 @@ GameObject:
   - component: {fileID: 7208526314080755470}
   - component: {fileID: 1775681135251568434}
   - component: {fileID: 1419589505365679240}
+  - component: {fileID: 3472697962853754894}
   - component: {fileID: 5123908627011037076}
+  - component: {fileID: 6402374190128892424}
   m_Layer: 5
   m_Name: CharacterSkinButton
   m_TagString: Untagged
@@ -203,6 +205,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &3472697962853754894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174932355689417636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2aafa722c9ea9f4885d28aecc9bbefc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5123908627011037076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +237,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skinImage: {fileID: 2354167155133606419}
+--- !u!114 &6402374190128892424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174932355689417636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ea2911ff3ca794487565f26d6767a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skinImage: {fileID: 2354167155133606419}
+  _closedSkin: {fileID: 2800000, guid: ff247c879a4ad34459a41530c1476f46, type: 3}
+  _normalColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+  _choosenColor: {r: 1, g: 1, b: 1, a: 1}

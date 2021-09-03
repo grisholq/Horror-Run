@@ -9,7 +9,16 @@ public class CharacterSkin : MonoBehaviour
     private void Awake()
     {
         InizializeComponents();
+    }
+
+    private void OnEnable()
+    {
         InizializeSkin();
+    }
+
+    private void OnDisable()
+    {
+        CharacterSkins.Instance.SkinChanged -= SetSkin;
     }
 
     private void InizializeComponents()
@@ -19,8 +28,9 @@ public class CharacterSkin : MonoBehaviour
 
     private void InizializeSkin()
     {
-        string skinName = GameDataStorage.Instance.CharacterSkinName;
-        SetSkin(SkinsStorage.Instance.GetCharacterSkinByName(skinName));
+        CharacterSkins.Instance.SkinChanged += SetSkin;
+        CharacterSkinData skin = CharacterSkins.Instance.Current;
+        SetSkin(skin);
     }
 
     public void SetSkin(CharacterSkinData skin)

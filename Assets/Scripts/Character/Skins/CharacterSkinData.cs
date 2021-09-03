@@ -7,4 +7,5 @@ public class CharacterSkinData : ScriptableObject
     public Transform Prefab;
     public Texture Image;
     public Avatar Avatar;
+    public SkinChangingData ChangingData;
 }

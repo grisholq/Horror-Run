@@ -3,13 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelsLoader : Singleton<LevelsLoader>
 {
-    [SerializeField] private Levels _levels; 
+    [SerializeField] private Levels _levels;
+    [SerializeField] private bool _reset;
 
     public LevelData LoadedLevel { get; set; }
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
+        if(_reset) LevelsProgress.Reset();
         LoadProgressLevel();           
     }
 

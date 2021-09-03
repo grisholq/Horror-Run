@@ -27,6 +27,8 @@ public class CharacterSanity : MonoBehaviour
         }
     }
 
+    public float NormalizedSanity => _sanity / _maxSanity;
+
     private void Start()
     {
         IsMad = false;

@@ -24,18 +24,21 @@ public class RoadTurn : MonoBehaviour
 
     private IEnumerator Turn(Transform character, float targetY)
     {
-        while(!HasReachedTarget(transform.eulerAngles.y , targetY))
+        while (!HasReachedTarget(character.eulerAngles.y, targetY))
         {
             Vector3 eulers = character.eulerAngles;
             eulers.y = Mathf.MoveTowardsAngle(character.eulerAngles.y, targetY, Time.deltaTime * _rotationSpeed);
             character.eulerAngles = eulers;
             yield return null;
         }
+
     }
 
     private bool HasReachedTarget(float angle, float target)
     {
-        return angle == target || ChangeAngleSign(angle) == target;
+        Debug.Log(Mathf.Abs(Mathf.DeltaAngle(angle, target)));
+        float distance = Mathf.Abs(Mathf.DeltaAngle(angle, target));
+        return distance <= 1.5f;
     }
 
     private float ChangeAngleSign(float angle)

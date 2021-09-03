@@ -408,7 +408,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
+  m_Intensity: 8
   m_Range: 7
   m_SpotAngle: 86.9
   m_InnerSpotAngle: 2.3
@@ -471,10 +471,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ranges:
-  - 3
-  - 5.5
-  - 9
-  - 12
+  - 1
+  - 3.5
+  - 6
+  - 10
 --- !u!1 &2077399730
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 5
-  m_Range: 3
+  m_Range: 1
   m_SpotAngle: 70.9
   m_InnerSpotAngle: 11.517955
   m_CookieSize: 10
@@ -1067,19 +1067,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2584522566881437562}
         m_TargetAssemblyTypeName: CharacterMover, Assembly-CSharp
-        m_MethodName: set_IsStopped
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Level, Assembly-CSharp
-        m_MethodName: LoseWithDelay
+        m_MethodName: StopMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1089,9 +1077,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7287652029044161242}
-        m_TargetAssemblyTypeName: CharacterAnimator, Assembly-CSharp
-        m_MethodName: SetDeath
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Level, Assembly-CSharp
+        m_MethodName: LoseWithDelay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1115,7 +1103,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2584522566881437562}
         m_TargetAssemblyTypeName: CharacterMover, Assembly-CSharp
-        m_MethodName: Stop
+        m_MethodName: StopMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

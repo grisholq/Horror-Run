@@ -41,11 +41,10 @@ public class SanitySkinChanger : MonoBehaviour
 
     private void LoadSkins()
     {
-        string skinName = GameDataStorage.Instance.SanitySkin;
-        SanityItemSkinData skins = SkinsStorage.Instance.GetSanitySkinByName(skinName);
+        SanitySkins.Instance.SkinChanged += SetSanitySkins;
+        SanityItemSkinData skins = SanitySkins.Instance.Current;
         SetSanitySkins(skins);
     }
-
 
     public void SetSanitySkins(SanityItemSkinData skin)
     {

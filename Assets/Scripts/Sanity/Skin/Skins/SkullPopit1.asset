@@ -16,3 +16,8 @@ MonoBehaviour:
   PositiveView: {fileID: 8020906107258417379, guid: 3b9e839c86c953545a86dd91b7d94a2f, type: 3}
   NegativeView: {fileID: 8277160075855375061, guid: 4ff09271bd33f294a8ba5ed462d89254, type: 3}
   Image: {fileID: 0}
+  ChangingData:
+    DefaultChoosenState: 0
+    DefaultOpenedState: 0
+    OpenedKey: SkullPopItOpened1
+    ChoosenKey: SkullPopItChoosen1
