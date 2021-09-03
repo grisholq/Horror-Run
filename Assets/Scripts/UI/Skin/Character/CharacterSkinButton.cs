@@ -32,6 +32,5 @@ public class CharacterSkinButton : MonoBehaviour
     public void ChooseSkin()
     {
         SkinChoosen?.Invoke(_skin);
-        _buttonEffects.Highlight();
     }
 }

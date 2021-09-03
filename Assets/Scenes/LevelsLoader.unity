@@ -201,6 +201,12 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3bae0e2747d40bf4cbe204cbf7d3a936, type: 2}
     - {fileID: 11400000, guid: d98e4b5ad8ea7644783fd4bc0eeff43f, type: 2}
     - {fileID: 11400000, guid: 9bc226e7c29ece848ad5c8d6592c3328, type: 2}
+    - {fileID: 11400000, guid: 46595c076df32de4882524b30650e51b, type: 2}
+    - {fileID: 11400000, guid: 4c1a3a979530af8498c250200e17c74c, type: 2}
+    - {fileID: 11400000, guid: fa3434928f346ba47aaaf7e04f28a6ad, type: 2}
+    - {fileID: 11400000, guid: e555466d38946784b8773371469deb6d, type: 2}
+    - {fileID: 11400000, guid: 6aa9cbf18cfd09943a2fb9ec2fdac462, type: 2}
+    - {fileID: 11400000, guid: 69f5233dc0e0ba341beb3ad335e046f1, type: 2}
   _reset: 0
 --- !u!4 &1231956665
 Transform:
@@ -250,6 +256,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 95c6b1717774efa4f9c2f2f258099dbf, type: 2}
   - {fileID: 11400000, guid: cc317863aff294d41be5d738450cbc81, type: 2}
   _defaultSkin: {fileID: 11400000, guid: 95c6b1717774efa4f9c2f2f258099dbf, type: 2}
+  _reset: 0
 --- !u!4 &1978679234
 Transform:
   m_ObjectHideFlags: 0

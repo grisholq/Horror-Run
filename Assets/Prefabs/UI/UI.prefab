@@ -162,8 +162,7 @@ MonoBehaviour:
   _openingSkinImage: {fileID: 5601999031746369624}
   _mask: {fileID: 3678331564516369800}
   _maxMaskBottom: 350
-  _riseSpeed: 40
-  _maxRiseDelta: 40
+  _riseSpeed: 100
 --- !u!1 &494184424507771534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,7 +3600,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 199.15
+  m_fontSize: 199.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5256,6 +5255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf85d4f2090c7045b4606c201eadde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rewardAmount: {fileID: 5928793990670622043}
 --- !u!1 &8008598883390576690
 GameObject:
   m_ObjectHideFlags: 0

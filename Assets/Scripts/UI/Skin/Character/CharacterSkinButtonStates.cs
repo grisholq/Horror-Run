@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,11 +16,6 @@ public class CharacterSkinButtonStates : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _animator = GetComponent<Animator>();
-    }
-
-    public void Highlight()
-    {
-        _animator.SetTrigger("Highlight");
     }
 
     public void ShowSkinState(CharacterSkinData skin)

@@ -3,12 +3,7 @@ using UnityEngine;
 
 public class SoftCurrencyRewardUI : MonoBehaviour
 {
-    private TextMeshProUGUI _rewardAmount;
-
-    private void Awake()
-    {
-        _rewardAmount = GetComponentInChildren<TextMeshProUGUI>();
-    }
+    [SerializeField] private TextMeshProUGUI _rewardAmount;
 
     public void SetRewardAmount(int amount)
     {

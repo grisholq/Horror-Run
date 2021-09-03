@@ -8,7 +8,6 @@ public class SanitySkinRewardUI : MonoBehaviour
     [SerializeField] private RawImage _mask;
     [SerializeField] private float _maxMaskBottom;
     [SerializeField] private float _riseSpeed;
-    [SerializeField] private float _maxRiseDelta;
 
     private Coroutine _maskRisingProcess;
 
@@ -28,10 +27,8 @@ public class SanitySkinRewardUI : MonoBehaviour
     {
         while(IsMaskRised(percentage) == false)
         {
-            Vector2 offsetMin = _mask.rectTransform.offsetMin;
-            float delta = _riseSpeed * Time.unscaledDeltaTime;
-            delta = Mathf.Clamp(delta, 0, _maxRiseDelta);
-            offsetMin.y += delta;
+            Vector2 offsetMin = _mask.rectTransform.offsetMin;          
+            offsetMin.y += _riseSpeed * Time.unscaledDeltaTime;
             _mask.rectTransform.offsetMin = offsetMin;
             yield return null;
         }
