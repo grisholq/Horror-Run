@@ -924,25 +924,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2306076063239411900, guid: 7c5be3d60d9e5684c99fdf6d9cd513b5, type: 3}
   m_PrefabInstance: {fileID: 936011390}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &243234951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8416337655566528024, guid: 7f41919592e2c7849a80808dadc2a91e, type: 3}
-  m_PrefabInstance: {fileID: 801201416}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &243234954
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243234951}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -989819400397054339, guid: 2a8608bb65ef7ed43a9f4e6cd7fcdd2a, type: 3}
 --- !u!1001 &247109361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3316,26 +3297,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 794355590}
     m_Modifications:
-    - target: {fileID: 783443793, guid: 7f41919592e2c7849a80808dadc2a91e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 783443794, guid: 7f41919592e2c7849a80808dadc2a91e, type: 3}
-      propertyPath: _angle
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 783443794, guid: 7f41919592e2c7849a80808dadc2a91e, type: 3}
-      propertyPath: _enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 783443794, guid: 7f41919592e2c7849a80808dadc2a91e, type: 3}
-      propertyPath: _turnTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 783443794, guid: 7f41919592e2c7849a80808dadc2a91e, type: 3}
-      propertyPath: _rotationSpeed
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 8416337655566528024, guid: 7f41919592e2c7849a80808dadc2a91e, type: 3}
       propertyPath: m_Name
       value: TurnLeft

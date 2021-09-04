@@ -15,6 +15,7 @@ public class BossfightMover : MonoBehaviour
         if(_character != null)
         {
             _character.transform.position = GetNextPosition();
+            _character.View.LookAt(_target);
         }
     }
 

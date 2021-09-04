@@ -17,5 +17,6 @@ MonoBehaviour:
   MinReward: 100
   MaxReward: 300
   OpeningSkin: {fileID: 0}
-  SkinOpeningPercentage: 0.33
+  StartOpenPercent: 0
+  EndOpenPercent: 0.33
   IsSkinOpened: 0

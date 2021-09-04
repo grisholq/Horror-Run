@@ -27,7 +27,7 @@ public class LevelRewarder : MonoBehaviour
             SanitySkins.Instance.OpenSkin(_levelData.OpeningSkin);
         }
 
-        _sanitySkinsRewardUI.ShowOpeningSkinProgress(_levelData.OpeningSkin.Image, _levelData.SkinOpeningPercentage);
+        _sanitySkinsRewardUI.ShowOpeningSkinProgress(_levelData.OpeningSkin.Image, _levelData.StartOpenPercent, _levelData.EndOpenPercent);
     }
 
     private void RewardSoftCurrency()

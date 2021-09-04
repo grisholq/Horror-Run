@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class RoadTurn : MonoBehaviour
@@ -7,6 +8,8 @@ public class RoadTurn : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private bool _enabled;
 
+    [SerializeField] private UnityEvent CharacterEntered;
+
     private void OnTriggerEnter(Collider other)
     {
         if(IsCharacter(other) && _enabled)
@@ -14,6 +17,7 @@ public class RoadTurn : MonoBehaviour
             Transform character = other.transform;
             StartCoroutine(Turn(character, character.eulerAngles.y + _angle));
             _enabled = false;
+            CharacterEntered?.Invoke();
         }
     }
 
@@ -36,7 +40,6 @@ public class RoadTurn : MonoBehaviour
 
     private bool HasReachedTarget(float angle, float target)
     {
-        Debug.Log(Mathf.Abs(Mathf.DeltaAngle(angle, target)));
         float distance = Mathf.Abs(Mathf.DeltaAngle(angle, target));
         return distance <= 1.5f;
     }

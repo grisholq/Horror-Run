@@ -10,6 +10,7 @@ public class LevelData : ScriptableObject
     public int MaxReward;
 
     public SanityItemSkinData OpeningSkin;
-    public float SkinOpeningPercentage;
+    public float StartOpenPercent;
+    public float EndOpenPercent;
     public bool IsSkinOpened;
 }

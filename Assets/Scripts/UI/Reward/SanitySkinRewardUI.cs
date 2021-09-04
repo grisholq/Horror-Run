@@ -11,21 +11,17 @@ public class SanitySkinRewardUI : MonoBehaviour
 
     private Coroutine _maskRisingProcess;
 
-    private void Awake()
-    {
-        ShowOpeningSkinProgress(null, 0.5f);
-    }
-
-    public void ShowOpeningSkinProgress(Texture _skinImage, float percentage)
+    public void ShowOpeningSkinProgress(Texture _skinImage, float startPercent, float endPercent)
     {
         _openingSkinImage.texture = _skinImage;
         if (_maskRisingProcess != null) StopCoroutine(_maskRisingProcess);
-        _maskRisingProcess = StartCoroutine(RiseMask(percentage));
+        _mask.rectTransform.offsetMin += new Vector2(0, _maxMaskBottom) * startPercent;
+        _maskRisingProcess = StartCoroutine(RiseMask(endPercent));
     }
 
-    private IEnumerator RiseMask(float percentage)
+    private IEnumerator RiseMask(float percent)
     {
-        while(IsMaskRised(percentage) == false)
+        while(IsMaskRised(percent) == false)
         {
             Vector2 offsetMin = _mask.rectTransform.offsetMin;          
             offsetMin.y += _riseSpeed * Time.unscaledDeltaTime;
