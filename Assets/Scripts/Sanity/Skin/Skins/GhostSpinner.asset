@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4252279d42948004db9a503b64325470, type: 3}
+  m_Name: GhostSpinner
+  m_EditorClassIdentifier: 
+  Name: GhostSpinner
+  PositiveView: {fileID: 1846277194843587152, guid: 6fc8540d60f99d94eadf744a04c6bb2e, type: 3}
+  NegativeView: {fileID: 5126631391747795064, guid: 2632e0241faef604f94babedbe0f91e9, type: 3}
+  Image: {fileID: 0}
+  ChangingData:
+    DefaultChoosenState: 0
+    DefaultOpenedState: 0
+    OpenedKey: GhostSpinnerOpened
+    ChoosenKey: GhostSpinnerChoosen

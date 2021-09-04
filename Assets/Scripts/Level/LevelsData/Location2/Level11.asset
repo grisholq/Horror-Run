@@ -16,7 +16,7 @@ MonoBehaviour:
   Number: 4
   MinReward: 100
   MaxReward: 300
-  OpeningSkin: {fileID: 11400000, guid: cc317863aff294d41be5d738450cbc81, type: 2}
+  OpeningSkin: {fileID: 11400000, guid: b089d8eede5476942bb17da7a3cd2945, type: 2}
   StartOpenPercent: 0
   EndOpenPercent: 0.33
   IsSkinOpened: 0

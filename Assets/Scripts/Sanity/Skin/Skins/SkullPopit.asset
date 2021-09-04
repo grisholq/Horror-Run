@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkullPopit
   m_EditorClassIdentifier: 
   Name: SkullPopIt
-  PositiveView: {fileID: 340375430623323415, guid: 08ee4ecc5d7e927408fa4731e8a38524, type: 3}
-  NegativeView: {fileID: 2775919003018940035, guid: 79be990fedccfc04287a43beed7eafae, type: 3}
+  PositiveView: {fileID: 3109622194932079577, guid: 08ee4ecc5d7e927408fa4731e8a38524, type: 3}
+  NegativeView: {fileID: 5436128118053833554, guid: fb27bdbabce7f49478c0d4e9da26c276, type: 3}
   Image: {fileID: 0}
   ChangingData:
     DefaultChoosenState: 1

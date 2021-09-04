@@ -6,6 +6,7 @@ public class InstantSanityChanger : SanityChanger
     [SerializeField] private float _sanityChange;
     [SerializeField] private bool _destoryOnEnter;
     [SerializeField] private ParticleSystem _destroyParticles;
+    [SerializeField] private UnityEvent Death;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,7 @@ public class InstantSanityChanger : SanityChanger
             if (_destoryOnEnter)
             {
                 SpawnDeathParticles();
+                Death?.Invoke();
                 Destroy(gameObject);           
             }          
         }

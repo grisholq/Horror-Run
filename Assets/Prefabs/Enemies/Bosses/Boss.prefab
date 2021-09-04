@@ -96,7 +96,7 @@ MonoBehaviour:
   _throwPeriod: 2.5
   _character: {fileID: 0}
   _startingPosition: {fileID: 5097290978874901174}
-  _skullPrefab: {fileID: 586337418821845994, guid: 83ff8e2e51094664e93bfe4ffe7877d7, type: 3}
+  _skullPrefab: {fileID: 1380681069976877771, guid: 83ff8e2e51094664e93bfe4ffe7877d7, type: 3}
   SkullThrowed:
     m_PersistentCalls:
       m_Calls:

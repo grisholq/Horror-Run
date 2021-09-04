@@ -17,6 +17,11 @@ public class SanityItem : MonoBehaviour
         EnableHalo();
     }
 
+    public void Take()
+    {
+        VibrationUtility.Instance.VibrateSmall();
+    }
+
     private void EnableHalo()
     {
         _halo.enabled = true;
