@@ -10,6 +10,7 @@ public class Boss : MonoBehaviour
     public void Die()
     {
         Died?.Invoke();
+        SoundsPlayer.Instance.PlayBossDeath();
         Destroy(gameObject);
     }
     

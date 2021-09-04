@@ -63,10 +63,12 @@ public class CharacterMover : MonoBehaviour
     {
         IsStopped = true;
         _rigidbody.velocity = Vector3.zero;
+        SoundsPlayer.Instance.DisableSteps();
     }
 
     public void ResumeMovement()
-    {
+    {  
         IsStopped = false;
+        SoundsPlayer.Instance.EnableSteps();
     }
 }

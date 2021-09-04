@@ -31,5 +31,6 @@ public class Character : MonoBehaviour
     public void Die()
     {
         Died?.Invoke();
+        SoundsPlayer.Instance.PlayPlayerDeath();
     }
 }

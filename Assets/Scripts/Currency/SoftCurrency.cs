@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SoftCurrency : Singleton<SoftCurrency>
@@ -6,6 +7,8 @@ public class SoftCurrency : Singleton<SoftCurrency>
 
     private int _amount;
 
+    public event Action<int> AmountChanged;
+
     public int Amount 
     { 
         get => _amount; 
@@ -13,6 +16,7 @@ public class SoftCurrency : Singleton<SoftCurrency>
         set
         {
             _amount = Mathf.Clamp(value, 0, MAX_CURRENCY);
+            AmountChanged?.Invoke(_amount);
         }
     }
 

@@ -7,12 +7,13 @@ public class SoftCurrencyUI : MonoBehaviour
 
     private void Start()
     {
-        ShowCurrencyAmount();
+        SoftCurrency.Instance.AmountChanged += ShowCurrencyAmount;
+        ShowCurrencyAmount(GetCurrencyAmount());
     }
 
-    private void ShowCurrencyAmount()
+    private void ShowCurrencyAmount(int amount)
     {
-        _currencyAmount.text = GetCurrencyAmount().ToString();
+        _currencyAmount.text = amount.ToString();
     }
 
     private int GetCurrencyAmount()
