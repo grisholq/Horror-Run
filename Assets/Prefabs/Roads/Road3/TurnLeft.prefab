@@ -42,7 +42,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 8, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1264157436544128683
 GameObject:
@@ -121,6 +121,7 @@ Transform:
   - {fileID: 2249437162300843329}
   - {fileID: 4399441585249699138}
   - {fileID: 1413009954433607920}
+  - {fileID: 6498807894224143984}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -229,7 +230,51 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 8, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &5248289059762013587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6498807894224143984}
+  - component: {fileID: 1969348072264862407}
+  m_Layer: 0
+  m_Name: Floor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6498807894224143984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248289059762013587}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08, y: 0, z: 14.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4319364776048279687}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1969348072264862407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248289059762013587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33, y: 0.5, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5641702440747947288
 GameObject:
@@ -273,7 +318,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 8, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5757981348002398539
 GameObject:
@@ -351,7 +396,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 8, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &668084687671809938
 PrefabInstance:
@@ -410,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662121460311812978, guid: e204bea8f18c5b849a71478a3470617f, type: 3}
       propertyPath: _angle
-      value: 90
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1662121460311812978, guid: e204bea8f18c5b849a71478a3470617f, type: 3}
       propertyPath: _rotationSpeed
@@ -447,6 +492,10 @@ PrefabInstance:
     - target: {fileID: 4140214893714806904, guid: e204bea8f18c5b849a71478a3470617f, type: 3}
       propertyPath: m_Size.x
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140214893714806904, guid: e204bea8f18c5b849a71478a3470617f, type: 3}
+      propertyPath: m_Size.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e204bea8f18c5b849a71478a3470617f, type: 3}
