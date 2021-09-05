@@ -20,3 +20,5 @@ MonoBehaviour:
   StartOpenPercent: 0.66
   EndOpenPercent: 1
   IsSkinOpened: 1
+  NumberInLocation: 3
+  LevelsInLocation: 3

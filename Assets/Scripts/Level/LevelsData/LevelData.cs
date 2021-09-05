@@ -13,4 +13,7 @@ public class LevelData : ScriptableObject
     public float StartOpenPercent;
     public float EndOpenPercent;
     public bool IsSkinOpened;
+
+    public int NumberInLocation;
+    public int LevelsInLocation;
 }

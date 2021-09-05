@@ -1,11 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 public class Bar : MonoBehaviour
 {
-    [SerializeField] private UnityEvent<float> ValueChanged;
-
     private Slider _slider;
 
     private void Awake()
@@ -15,6 +12,6 @@ public class Bar : MonoBehaviour
 
     public void SetBarValueNormalized(float value)
     {
-        ValueChanged?.Invoke(value);
+        _slider.normalizedValue = value;
     }
 }
