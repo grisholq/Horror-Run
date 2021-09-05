@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: GhostSpinner
   PositiveView: {fileID: 1846277194843587152, guid: 6fc8540d60f99d94eadf744a04c6bb2e, type: 3}
   NegativeView: {fileID: 5126631391747795064, guid: 2632e0241faef604f94babedbe0f91e9, type: 3}
-  Image: {fileID: 0}
+  Image: {fileID: 2800000, guid: bc6b8758eb52f2e4a990a90b48b38aec, type: 3}
   ChangingData:
     DefaultChoosenState: 0
     DefaultOpenedState: 0

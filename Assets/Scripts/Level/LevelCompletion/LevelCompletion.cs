@@ -30,6 +30,7 @@ public class LevelCompletion : MonoBehaviour
 
     public void UpdateUI(float progress)
     {
+        if (_progressBar.isActiveAndEnabled == false) return;
         _progressBar.SetBarValueNormalized(progress);
     }
 

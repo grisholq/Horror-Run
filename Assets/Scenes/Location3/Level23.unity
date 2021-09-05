@@ -2906,8 +2906,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShradSkin
       objectReference: {fileID: 0}
+    - target: {fileID: 5097275997123291809, guid: 6e6a04fd38cdd1c478dad2fe7e90cc0f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097275997123291809, guid: 6e6a04fd38cdd1c478dad2fe7e90cc0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097275997123291809, guid: 6e6a04fd38cdd1c478dad2fe7e90cc0f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097275997123291809, guid: 6e6a04fd38cdd1c478dad2fe7e90cc0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e6a04fd38cdd1c478dad2fe7e90cc0f, type: 3}
+--- !u!95 &938219259 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1179104552148103387, guid: 6e6a04fd38cdd1c478dad2fe7e90cc0f, type: 3}
+  m_PrefabInstance: {fileID: 938219258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &940934603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,11 +5673,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c556f996c55ca854ab7a262191bf26c6, type: 3}
---- !u!95 &1946326151 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7391604698616462845, guid: 6e6a04fd38cdd1c478dad2fe7e90cc0f, type: 3}
-  m_PrefabInstance: {fileID: 938219258}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1957368486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6509153190433007733, guid: e14c178948c6e3145820f251493af430, type: 3}
@@ -6813,7 +6829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2553185754055354259, guid: e228656df61872d46bce0e77977036fb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3034400433934411499, guid: e228656df61872d46bce0e77977036fb, type: 3}
       propertyPath: m_IsActive
@@ -7071,6 +7087,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9166382187134294492, guid: e228656df61872d46bce0e77977036fb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e228656df61872d46bce0e77977036fb, type: 3}
 --- !u!1 &4831441204773201950 stripped
@@ -7155,7 +7175,7 @@ PrefabInstance:
     - target: {fileID: 5337217632993381054, guid: a49be1b295cfa794c912f64accd4b21f, type: 3}
       propertyPath: _animator
       value: 
-      objectReference: {fileID: 1946326151}
+      objectReference: {fileID: 938219259}
     - target: {fileID: 6760416732247551710, guid: a49be1b295cfa794c912f64accd4b21f, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

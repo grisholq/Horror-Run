@@ -36,6 +36,7 @@ public class BossfightProjector : MonoBehaviour
         {
             _enabled = false;
             TurnedToBoss?.Invoke();
+            SoundsPlayer.Instance.PlayBossDeath();
         }
     }
 }
