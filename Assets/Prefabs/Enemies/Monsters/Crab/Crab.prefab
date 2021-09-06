@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &796415635391843529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7666109441841641357}
-  m_Layer: 0
-  m_Name: MonsterWay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7666109441841641357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796415635391843529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6064514096160803074}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4517455909083221929
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +120,9 @@ MonoBehaviour:
   _sanityChange: 20
   _destoryOnEnter: 0
   _destroyParticles: {fileID: 0}
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7093770470605290257
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +158,6 @@ Transform:
   m_Children:
   - {fileID: 7234743114999184420}
   - {fileID: 6211309537749789852}
-  - {fileID: 7666109441841641357}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -257,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changerType: 1
   _maxDistance: 6
-  _maxSanityChange: 50
+  _maxSanityChange: 15
 --- !u!114 &6497915915637684135
 MonoBehaviour:
   m_ObjectHideFlags: 0

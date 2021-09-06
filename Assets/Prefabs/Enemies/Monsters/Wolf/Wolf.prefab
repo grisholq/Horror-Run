@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changerType: 1
   _maxDistance: 6
-  _maxSanityChange: 50
+  _maxSanityChange: 15
 --- !u!114 &8212227669393463768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8577071180000366476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.351, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8656258764431246864}
@@ -366,6 +366,9 @@ MonoBehaviour:
   _sanityChange: 20
   _destoryOnEnter: 0
   _destroyParticles: {fileID: 0}
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &9197012358381688317
 PrefabInstance:
   m_ObjectHideFlags: 0

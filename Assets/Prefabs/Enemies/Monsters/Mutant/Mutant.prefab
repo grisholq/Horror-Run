@@ -31,36 +31,6 @@ Transform:
   m_Father: {fileID: 8785343642258005992}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2796695526443899427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5161628634095083879}
-  m_Layer: 0
-  m_Name: MonsterWay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5161628634095083879
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2796695526443899427}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8785343642258005992}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5742255165093752315
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +66,6 @@ Transform:
   m_Children:
   - {fileID: 5306450402131012302}
   - {fileID: 8931118629732727414}
-  - {fileID: 5161628634095083879}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -168,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changerType: 1
   _maxDistance: 6
-  _maxSanityChange: 50
+  _maxSanityChange: 15
 --- !u!114 &8642275844669382989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +256,9 @@ MonoBehaviour:
   _sanityChange: 20
   _destoryOnEnter: 0
   _destroyParticles: {fileID: 0}
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &9149525829629918962
 PrefabInstance:
   m_ObjectHideFlags: 0
