@@ -3,55 +3,26 @@ using UnityEngine.SceneManagement;
 
 public class LevelsLoader : Singleton<LevelsLoader>
 {
-    [SerializeField] private Levels _levels;
-    [SerializeField] private bool _reset;
+    [SerializeField] private LevelsProgress _progress;
+    [SerializeField] private LevelsStorage _levels;
 
     public LevelData LoadedLevel { get; set; }
 
-    private void Awake()
+    private void Start()
     {
         DontDestroyOnLoad(this);
-        if(_reset) LevelsProgress.Reset();
         LoadProgressLevel();           
     }
 
     private void LoadProgressLevel()
     {
-        if (LevelsProgress.Empty)
-        {
-            LoadFirstLevel();
-        }
-        else
-        {
-            LoadCurrentLevel();
-        }
+        LoadLevel(_progress.CurrentLevel);
     }
 
-    private void LoadFirstLevel()
+    public void LoadLevel(int number)
     {
-        LoadLevel(_levels.GetFirstLevel());
-    }
-
-    private void LoadCurrentLevel()
-    {
-        int level = LevelsProgress.GetCurrentLevelNumber();
-        LoadLevel(_levels.GetLevel(level));
-    }
-    
-    public void RestartLevel()
-    {
-        LoadLevel(LoadedLevel);
-    }
-
-    public void LoadNextLevel()
-    {
-        LoadLevel(_levels.GetNextLevel(LoadedLevel));
-    }
-
-    private void LoadLevel(LevelData level)
-    {
+        LevelData level = _levels.GetLevel(number);
         LoadedLevel = level;
-        LevelsProgress.SetCurrentLevelNumber(level.Number);
         SceneManager.LoadSceneAsync(level.BuildIndex);        
     }
 }

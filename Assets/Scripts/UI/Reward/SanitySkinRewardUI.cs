@@ -1,19 +1,23 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class SanitySkinRewardUI : MonoBehaviour
 {
-    [SerializeField] private RawImage _openingSkinImage;
+    [SerializeField] private Image _openingSkinImage;
+    [SerializeField] private TextMeshProUGUI _openingSkinPercent;
     [SerializeField] private RawImage _mask;
     [SerializeField] private float _maxMaskBottom;
     [SerializeField] private float _riseSpeed;
 
     private Coroutine _maskRisingProcess;
 
-    public void ShowOpeningSkinProgress(Texture _skinImage, float startPercent, float endPercent)
+    public void ShowOpeningSkinProgress(Sprite _skinImage, float startPercent, float endPercent)
     {
-        _openingSkinImage.texture = _skinImage;
+        _openingSkinImage.sprite = _skinImage;
+        _openingSkinPercent.text = endPercent.ToString();
+
         if (_maskRisingProcess != null) StopCoroutine(_maskRisingProcess);
         _mask.rectTransform.offsetMin += new Vector2(0, _maxMaskBottom) * startPercent;
         _maskRisingProcess = StartCoroutine(RiseMask(endPercent));

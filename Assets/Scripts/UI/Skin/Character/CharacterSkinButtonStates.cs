@@ -3,9 +3,8 @@ using UnityEngine.UI;
 
 public class CharacterSkinButtonStates : MonoBehaviour
 {
-    [SerializeField] private RawImage _skinImage;
-
-    [SerializeField] private Texture _closedSkin;
+    [SerializeField] private Image _skinImage;
+    [SerializeField] private Sprite _closedSkin;
     [SerializeField] private Color _normalColor;
     [SerializeField] private Color _choosenColor;
 
@@ -40,7 +39,7 @@ public class CharacterSkinButtonStates : MonoBehaviour
 
     private void ShowClosedState(CharacterSkinData skin)
     {
-        _skinImage.texture = _closedSkin;
+        _skinImage.sprite = _closedSkin;
         _skinImage.color = _normalColor;
         _button.interactable = false;
 
@@ -48,14 +47,14 @@ public class CharacterSkinButtonStates : MonoBehaviour
 
     private void ShowOpenedState(CharacterSkinData skin)
     {
-        _skinImage.texture = skin.Image;
+        _skinImage.sprite = skin.Image;
         _skinImage.color = _normalColor;
         _button.interactable = true;
     }
 
     private void ShowChoosenState(CharacterSkinData skin)
     {
-        _skinImage.texture = skin.Image;
+        _skinImage.sprite = skin.Image;
         _skinImage.color = _choosenColor;
         _button.interactable = true;
     } 

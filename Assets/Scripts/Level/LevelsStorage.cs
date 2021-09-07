@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Levels
+public class LevelsStorage : MonoBehaviour
 {
     [SerializeField] private List<LevelData> _levels;
 
-    public LevelData GetFirstLevel()
+    public int Count => _levels.Count;
+
+    private void Awake()
     {
-        return GetLevel(1);
+        DontDestroyOnLoad(this);
     }
 
     public LevelData GetLevel(int number)
@@ -22,11 +24,5 @@ public class Levels
             }
         }
         return null;
-    }
-
-    public LevelData GetNextLevel(LevelData levelData)
-    {
-        LevelData level = GetLevel(levelData.Number + 1);
-        return level == null ? GetFirstLevel() : level;
     }
 }

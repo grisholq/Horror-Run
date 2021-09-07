@@ -24,7 +24,15 @@ public class Level : MonoBehaviour
 
     public void Restart()
     {
-        LevelsLoader.Instance.RestartLevel();
+        int level = LevelsProgress.Instance.CurrentLevel;
+        LevelsLoader.Instance.LoadLevel(level);
+    }
+
+    public void NextLevel()
+    {
+        LevelsProgress.Instance.LevelPassed();
+        int level = LevelsProgress.Instance.CurrentLevel;
+        LevelsLoader.Instance.LoadLevel(level);
     }
 
     public void Win()
@@ -47,11 +55,6 @@ public class Level : MonoBehaviour
     public void LoseWithDelay()
     {
         StartCoroutine(DelayOperation(Lose, _loseDelayTime));
-    }
-    
-    public void NextLevel()
-    {
-        LevelsLoader.Instance.LoadNextLevel();
     }
 
     private IEnumerator DelayOperation(Action operation, float seconds)

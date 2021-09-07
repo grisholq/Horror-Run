@@ -3,9 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterSkinButton : MonoBehaviour
-{
-    [SerializeField] private RawImage _skinImage;
-    
+{ 
     public event Action<CharacterSkinData> SkinChoosen;
 
     private CharacterSkinData _skin;
@@ -20,7 +18,6 @@ public class CharacterSkinButton : MonoBehaviour
     public void SetSkin(CharacterSkinData skin)
     {
         _skin = skin;
-        _skinImage.texture = skin.Image;
         DrawState();
     }
 
