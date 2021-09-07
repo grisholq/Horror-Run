@@ -16,4 +16,7 @@ public class LevelData : ScriptableObject
 
     public int NumberInLocation;
     public int LevelsInLocation;
+
+    public Texture LocationImage;
+    public Texture NextLocationImage;
 }
