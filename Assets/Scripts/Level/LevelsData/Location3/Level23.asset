@@ -22,3 +22,5 @@ MonoBehaviour:
   IsSkinOpened: 1
   NumberInLocation: 3
   LevelsInLocation: 3
+  LocationImage: {fileID: 2800000, guid: 4287c4fb769a88f4b96fbcdf05a650a2, type: 3}
+  NextLocationImage: {fileID: 2800000, guid: d1f26ef782098bf448532ebe29d4bc05, type: 3}

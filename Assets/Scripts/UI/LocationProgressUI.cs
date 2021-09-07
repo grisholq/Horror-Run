@@ -3,18 +3,28 @@ using UnityEngine.UI;
 
 public class LocationProgressUI : MonoBehaviour
 {
-    private Slider _progressSlider;
+    [SerializeField] private Slider _progressSlider;
+    [SerializeField] private RawImage _currentLevelImage;
+    [SerializeField] private RawImage _nextLevelImage;
+   
+    private LevelData _level;
 
-    private void Awake()
+    private void Start()
     {
-        _progressSlider = GetComponent<Slider>();
-        ShowProgress();
+        _level = LevelsLoader.Instance.LoadedLevel;
+        ShowProgressBar();
+        ShowLevelPictures();
     }
 
-    private void ShowProgress()
+    private void ShowProgressBar()
     {     
-        LevelData level = LevelsLoader.Instance.LoadedLevel;
-        float _sliderValue = (float)level.NumberInLocation / (float)level.LevelsInLocation;
+        float _sliderValue = (float)_level.NumberInLocation / (float)_level.LevelsInLocation;
         _progressSlider.normalizedValue = _sliderValue;
+    }
+
+    private void ShowLevelPictures()
+    {
+        _currentLevelImage.texture = _level.LocationImage;
+        _nextLevelImage.texture = _level.NextLocationImage;
     }
 }
