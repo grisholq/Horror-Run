@@ -6,36 +6,45 @@ using System.Collections;
 public class SanitySkinRewardUI : MonoBehaviour
 {
     [SerializeField] private Image _openingSkinImage;
-    [SerializeField] private TextMeshProUGUI _openingSkinPercent;
+    [SerializeField] private TextMeshProUGUI _openingPercentText;
     [SerializeField] private RawImage _mask;
     [SerializeField] private float _maxMaskBottom;
-    [SerializeField] private float _riseSpeed;
+    [SerializeField] private float _percentPerSecond;
 
+    private float _openingPercent;
     private Coroutine _maskRisingProcess;
 
     public void ShowOpeningSkinProgress(Sprite _skinImage, float startPercent, float endPercent)
     {
         _openingSkinImage.sprite = _skinImage;
-        _openingSkinPercent.text = endPercent.ToString();
 
         if (_maskRisingProcess != null) StopCoroutine(_maskRisingProcess);
+        _openingPercent = startPercent;
         _mask.rectTransform.offsetMin += new Vector2(0, _maxMaskBottom) * startPercent;
         _maskRisingProcess = StartCoroutine(RiseMask(endPercent));
     }
 
-    private IEnumerator RiseMask(float percent)
+    private IEnumerator RiseMask(float targetPercent)
     {
-        while(IsMaskRised(percent) == false)
+        while(_openingPercent < targetPercent)
         {
-            Vector2 offsetMin = _mask.rectTransform.offsetMin;          
-            offsetMin.y += _riseSpeed * Time.unscaledDeltaTime;
-            _mask.rectTransform.offsetMin = offsetMin;
+            _openingPercent += Time.unscaledDeltaTime * _percentPerSecond;
+            SetMaskPercent(_openingPercent);
+            SetTextPercent(_openingPercent);
             yield return null;
         }
     }
 
-    private bool IsMaskRised(float percentage)
+    private void SetMaskPercent(float percent)
     {
-        return _mask.rectTransform.offsetMin.y >= _maxMaskBottom * percentage;
+        Vector2 offsetMin = _mask.rectTransform.offsetMin;
+        offsetMin.y = percent * _maxMaskBottom;
+        _mask.rectTransform.offsetMin = offsetMin;
+    }
+    
+    private void SetTextPercent(float percent)
+    {
+        percent *= 100;
+        _openingPercentText.text = ((int)percent).ToString();
     }
 }

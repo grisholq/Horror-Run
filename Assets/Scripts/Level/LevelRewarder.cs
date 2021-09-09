@@ -20,6 +20,13 @@ public class LevelRewarder : MonoBehaviour
         RewardSanitySkins();
     }
 
+    private void RewardSoftCurrency()
+    {
+        float reward = GetRewardFromSanityNormalized();
+        SoftCurrency.Instance.Earn((int)reward);
+        _softCurrencyRewardUI.SetRewardAmount((int)reward);
+    }
+
     public void RewardSanitySkins()
     {
         if(_levelData.IsSkinOpened)
@@ -27,14 +34,31 @@ public class LevelRewarder : MonoBehaviour
             SanitySkins.Instance.OpenSkin(_levelData.OpeningSkin);
         }
 
-        _sanitySkinsRewardUI.ShowOpeningSkinProgress(_levelData.OpeningSkin.Image, _levelData.StartOpenPercent, _levelData.EndOpenPercent);
+        if(LevelsProgress.Instance.IsLooping)
+        {
+            HideOpeningSkin();
+        }
+        else
+        {
+            ShowOpeningSkin();
+        }
     }
 
-    private void RewardSoftCurrency()
+    private void ShowOpeningSkin()
     {
-        float reward = GetRewardFromSanityNormalized();
-        SoftCurrency.Instance.Earn((int)reward);
-        _softCurrencyRewardUI.SetRewardAmount((int)reward);
+        _sanitySkinsRewardUI.gameObject.SetActive(true);
+
+        Sprite openingSkin = _levelData.OpeningSkin.Image;
+        float deltaPercent = 1 / (float)_levelData.LevelsInLocation;
+        float endPercent = (float)_levelData.NumberInLocation * deltaPercent;
+        float startPercent = endPercent - deltaPercent;
+
+        _sanitySkinsRewardUI.ShowOpeningSkinProgress(openingSkin, startPercent, endPercent);
+    }
+
+    private void HideOpeningSkin()
+    {
+        _sanitySkinsRewardUI.gameObject.SetActive(false);
     }
 
     private float GetRewardFromSanityNormalized()

@@ -20,11 +20,12 @@ public class CharacterMover : MonoBehaviour
         _sideInput = GetComponent<CharacterSideInput>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (IsStopped) return;
 
         Vector3 delta = FormDelta();
+        Debug.Log(delta);
         LookInDirection(delta);
         SetMovementDirection(delta);
     }

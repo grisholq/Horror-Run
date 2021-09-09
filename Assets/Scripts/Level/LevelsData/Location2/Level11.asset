@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f081b2aa6524584aaf0407c18f59542, type: 3}
   m_Name: Level11
   m_EditorClassIdentifier: 
-  BuildIndex: 4
-  Number: 4
-  MinReward: 100
-  MaxReward: 300
+  BuildIndex: 5
+  Number: 5
+  MinReward: 150
+  MaxReward: 400
   OpeningSkin: {fileID: 11400000, guid: b089d8eede5476942bb17da7a3cd2945, type: 2}
-  StartOpenPercent: 0
-  EndOpenPercent: 0.33
   IsSkinOpened: 0
   NumberInLocation: 1
-  LevelsInLocation: 3
+  LevelsInLocation: 6
   LocationImage: {fileID: 2800000, guid: e151d6d1cdc14554facbbf716a04f9e4, type: 3}
   NextLocationImage: {fileID: 2800000, guid: 4287c4fb769a88f4b96fbcdf05a650a2, type: 3}

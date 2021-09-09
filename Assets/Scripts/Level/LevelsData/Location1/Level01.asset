@@ -17,10 +17,8 @@ MonoBehaviour:
   MinReward: 100
   MaxReward: 300
   OpeningSkin: {fileID: 11400000, guid: a97ed7fe804bbd24bb8618d89e159534, type: 2}
-  StartOpenPercent: 0
-  EndOpenPercent: 0.33
   IsSkinOpened: 0
   NumberInLocation: 1
-  LevelsInLocation: 3
+  LevelsInLocation: 4
   LocationImage: {fileID: 2800000, guid: d1f26ef782098bf448532ebe29d4bc05, type: 3}
   NextLocationImage: {fileID: 2800000, guid: e151d6d1cdc14554facbbf716a04f9e4, type: 3}

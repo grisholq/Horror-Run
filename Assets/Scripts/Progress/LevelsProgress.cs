@@ -9,6 +9,7 @@ public class LevelsProgress : Singleton<LevelsProgress>
 
     public int CurrentLevel => PlayerPrefs.GetInt(LEVEL_KEY);
     public int CurrentLoop => PlayerPrefs.GetInt(LOOP_KEY);
+    public bool IsLooping => PlayerPrefs.GetInt(LOOP_KEY) > 0;
     public int CurrentLevelLooped => CurrentLevel + _levels.Count * CurrentLoop;
 
     private const string LEVEL_KEY = "Level";
@@ -53,7 +54,7 @@ public class LevelsProgress : Singleton<LevelsProgress>
 
         if(level > _levels.Count)
         {
-            level = _defaultLevel;
+            level = _defaultLevel + 1;
             IncrementLoop();
         }
 

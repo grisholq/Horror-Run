@@ -2,12 +2,20 @@ using UnityEngine;
 
 public class CharacterSideInput : MonoBehaviour
 {
+    [SerializeField] private float _touchInputSensetivity;
+
     public float SideInput { get; set; }
+
+    private Vector2 _touchInputStart;
 
     private void Update()
     {
         if (HasKeyboardInput()) SideInput = GetSideMovementFormKeyboard();
-        else if (HasTouchInput()) SideInput = GetSideMovementDirectionFromTouch();
+        else if (HasTouchInput())
+        {
+            TryUpdateStartPosition();
+            SideInput = GetSideMovementDirectionFromTouch();
+        } 
         else SideInput = 0;
     }
 
@@ -21,26 +29,27 @@ public class CharacterSideInput : MonoBehaviour
         return Input.GetAxis("Horizontal") != 0;
     }
 
-    private float GetSideMovementDirectionFromTouch()
+    private void TryUpdateStartPosition()
     {
-        Vector2 input = GetNormalizedTouchInput();
+        Touch touch = Input.GetTouch(0);
 
-        if (input.x <= 1) return -(1 - input.x);
-        if (input.x > 1) return (input.x - 1);
-
-        return 0;
+        if(touch.phase == TouchPhase.Began)
+        {
+            _touchInputStart = touch.position;
+        }
     }
 
-    private Vector2 GetNormalizedTouchInput()
+    private float GetSideMovementDirectionFromTouch()
+    {
+        Vector2 input = GetDeltaTouchInput();
+        input *= _touchInputSensetivity;
+        return Mathf.Clamp(input.x, -1, 1);
+    }
+
+    private Vector2 GetDeltaTouchInput()
     {
         Vector2 touchPosition = Input.GetTouch(0).position;
-        Vector2 screenSize = new Vector2(Screen.width, Screen.height);
-        Vector2 normalizedInput = new Vector2();
-
-        normalizedInput.x = (touchPosition.x / screenSize.x);
-        normalizedInput.y = (touchPosition.y / screenSize.y);
-
-        return normalizedInput * 2;
+        return (touchPosition - _touchInputStart);
     }
 
     private float GetSideMovementFormKeyboard()
