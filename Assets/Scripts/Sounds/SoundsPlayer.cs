@@ -7,7 +7,8 @@ public class SoundsPlayer : Singleton<SoundsPlayer>
     [SerializeField] private AudioSource _monsterTouch;
     [SerializeField] private AudioSource _monsterComing;
     [SerializeField] private AudioSource _playerDeath;
-    [SerializeField] private BossDeathSounds _bossDeath;
+    [SerializeField] private AudioSource _bossDeath;
+    [SerializeField] private AudioSource _bossScreams;
 
     [SerializeField] private bool _musicOn;
     [SerializeField] private bool _soundsOn;
@@ -58,6 +59,17 @@ public class SoundsPlayer : Singleton<SoundsPlayer>
         _ambient.Stop();
     }
 
+    public void EnableBossScreams()
+    {
+        if (_soundsOn == false) return;
+        _bossScreams.Play();
+    }
+
+    public void DisableBossScreams()
+    {
+        _bossScreams.Stop();
+    }
+
     public void PlayMonsterTouch()
     {
         if (_soundsOn == false) return;
@@ -82,6 +94,6 @@ public class SoundsPlayer : Singleton<SoundsPlayer>
     public void PlayBossDeath()
     {
         if (_soundsOn == false) return;
-        _bossDeath.PlayRandomSound();
+        _bossDeath.Play();
     }
 }

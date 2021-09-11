@@ -45,6 +45,6 @@ public class SanitySkinRewardUI : MonoBehaviour
     private void SetTextPercent(float percent)
     {
         percent *= 100;
-        _openingPercentText.text = ((int)percent).ToString();
+        _openingPercentText.text = ((int)percent).ToString() + '%';
     }
 }

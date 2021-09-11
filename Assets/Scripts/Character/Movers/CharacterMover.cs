@@ -25,7 +25,6 @@ public class CharacterMover : MonoBehaviour
         if (IsStopped) return;
 
         Vector3 delta = FormDelta();
-        Debug.Log(delta);
         LookInDirection(delta);
         SetMovementDirection(delta);
     }

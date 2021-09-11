@@ -7,9 +7,15 @@ public class Boss : MonoBehaviour
     [SerializeField] private float _deathDelay;
     [SerializeField] private UnityEvent Died;
 
+    private void Start()
+    {
+        SoundsPlayer.Instance.EnableBossScreams();
+    }
+
     public void Die()
     {
         Died?.Invoke();
+        SoundsPlayer.Instance.DisableBossScreams();
         Destroy(gameObject);
     }
     
