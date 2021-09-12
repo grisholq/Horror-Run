@@ -10,6 +10,8 @@ public class LevelCompletion : MonoBehaviour
 
     private float _levelDistance;
 
+    public int Progress => (int)(GetLevelProgress() * 100);
+
     private void Awake()
     {
         Inizialize();
