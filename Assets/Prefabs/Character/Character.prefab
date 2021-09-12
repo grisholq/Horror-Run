@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSanity: 100
   _startingSanity: 40
-  _maxDecreasePerSecond: 8
+  _maxDecreasePerSecond: 6.5
   _autoDecreaseThereshold: 25
   HaveGoneMad:
     m_PersistentCalls:

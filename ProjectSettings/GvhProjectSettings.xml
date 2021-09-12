@@ -1,5 +1,6 @@
 <projectSettings>
-  <projectSetting name="com.google.external-dependency-managerAnalyticsEnabled" value="False" />
+  <projectSetting name="com.google.external-dependency-managerAnalyticsCookie" value="12e4e5f4631f4d88996ffe1a68524fb5" />
+  <projectSetting name="com.google.external-dependency-managerAnalyticsEnabled" value="True" />
   <projectSetting name="Google.IOSResolver.VerboseLoggingEnabled" value="False" />
   <projectSetting name="Google.UnityPackageManagerResolver.Enable" value="False" />
   <projectSetting name="Google.UnityPackageManagerResolver.VerboseLoggingEnabled" value="False" />
