@@ -16,7 +16,7 @@ MonoBehaviour:
   Number: 15
   MinReward: 200
   MaxReward: 500
-  OpeningSkin: {fileID: 11400000, guid: a97ed7fe804bbd24bb8618d89e159534, type: 2}
+  OpeningSkin: {fileID: 0}
   IsSkinOpened: 0
   NumberInLocation: 5
   LevelsInLocation: 6

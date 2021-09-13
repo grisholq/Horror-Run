@@ -34,7 +34,7 @@ public class LevelRewarder : MonoBehaviour
             SanitySkins.Instance.OpenSkin(_levelData.OpeningSkin);
         }
 
-        if(LevelsProgress.Instance.IsLooping)
+        if(LevelsProgress.Instance.IsLooping || _levelData.OpeningSkin == null)
         {
             HideOpeningSkin();
         }
