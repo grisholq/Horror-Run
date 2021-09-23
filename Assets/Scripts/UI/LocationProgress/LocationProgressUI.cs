@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LocationProgressUI : MonoBehaviour
 {
-    [SerializeField] private RectTransform _levelProgressBarParent;
+    [SerializeField] private Transform _levelProgressBarParent;
     [SerializeField] private LevelProgressBarUI _levelProgressBarUI;
 
     [SerializeField] private Texture _levelPassedImage;
@@ -18,11 +18,11 @@ public class LocationProgressUI : MonoBehaviour
     private void Start()
     {
         _level = LevelsLoader.Instance.LoadedLevel;
-        ShowProgressBar();
+        ShowProgressBars();
         ShowLevelPictures();
     }
 
-    private void ShowProgressBar()
+    private void ShowProgressBars()
     {
         int passedBarsCount = _level.NumberInLocation;
         int emptyBarsCount = _level.LevelsInLocation - _level.NumberInLocation;
@@ -31,7 +31,7 @@ public class LocationProgressUI : MonoBehaviour
 
         for (int i = 0; i < passedBarsCount; i++)
         {
-            LevelProgressBarUI bar = GetLevelBar();
+            LevelProgressBarUI bar = InstantiateLevelBar();
             bar.SetLevelStateImage(_levelPassedImage);
             bar.transform.SetParent(_levelProgressBarParent);
             bars.Add(bar);
@@ -39,7 +39,7 @@ public class LocationProgressUI : MonoBehaviour
         
         for (int i = 0; i < emptyBarsCount; i++)
         {
-            LevelProgressBarUI bar = GetLevelBar();
+            LevelProgressBarUI bar = InstantiateLevelBar();
             bar.SetLevelStateImage(_levelNotPassedImage);
             bar.transform.SetParent(_levelProgressBarParent);
             bars.Add(bar);
@@ -48,7 +48,7 @@ public class LocationProgressUI : MonoBehaviour
         SetBarsLevelNumbers(bars);
     }
 
-    private LevelProgressBarUI GetLevelBar()
+    private LevelProgressBarUI InstantiateLevelBar()
     {
         return Instantiate(_levelProgressBarUI, _levelProgressBarParent);     
     }
